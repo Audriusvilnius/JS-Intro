@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "pratimai": "nodemon ./js/pratimai.js",
     "numbers": "nodemon ./js/01-numbers.js",
     "string": "nodemon ./js/02-string.js",
     "dev": "nodemon",

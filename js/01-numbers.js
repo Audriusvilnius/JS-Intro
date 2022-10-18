@@ -165,3 +165,6 @@ console.log(nf5, '->', floor5);
 const nf6 = -7.13;
 const floor6 = Math.floor(nf6);
 console.log(nf6, '->', floor6);
+
+
+
