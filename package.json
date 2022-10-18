@@ -1,18 +1,26 @@
 {
   "name": "js-intro",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "numbers": "nodemon ./js/01-numbers.js",
-    "string": "nodemon ./js/0nodemon-string.js",
+    "string": "nodemon ./js/02-string.js",
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Audrius",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Audriusvilnius/JS-Intro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Audriusvilnius/JS-Intro/issues"
+  },
+  "homepage": "https://github.com/Audriusvilnius/JS-Intro#readme",
+  "description": ""
 }
