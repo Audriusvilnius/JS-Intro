@@ -45,10 +45,10 @@ a.	Po kiekvieno jų inicijavimo, išvesti į console
 a.	Rezultatą išvesti į console
 */
 
-const sumNumb = firsNumb+secondNumb+lastNumb;
+const sumNumb = firsNumb + secondNumb + lastNumb;
 console.log(sumNumb);
 
-const sumNumb1 = `${firsNumb} + ${secondNumb} * ${lastNumb} = ${firsNumb + secondNumb * lastNumb }`;
+const sumNumb1 = `${firsNumb} + ${secondNumb} * ${lastNumb} = ${firsNumb + secondNumb * lastNumb}`;
 
 console.log(sumNumb1);
 
@@ -65,18 +65,47 @@ a.	1-2+3-4+5
 b.	Rezultatą išvesti į console
 */
 
-const p1=1;
-const p2=2;
-const p3=3;
-const p4=4;
-const p5=5;
-mathP=p1-p2+p3-p4+p5;
+const p1 = 1;
+const p2 = 2;
+const p3 = 3;
+const p4 = 4;
+const p5 = 5;
+mathP = p1 - p2 + p3 - p4 + p5;
 
 console.log(mathP);
-console.log(p1-p2+p3-p4+p5);
+console.log(p1 - p2 + p3 - p4 + p5);
 
 /*4.	Sujungti sąrašų vertes, kurių tipas yra tekstai, nuo sąrašo galo iki pradžios taip, jog tarp jų būtų kablelis ir tarpas
 */
 
 
+
+/*
+Kintamųjų palyginimas
+
+
+Lyginant, jei rezultatas tenkina palyginimo sąlygą, tai į console išvesti žodį “Pomidoras”, o jei sąlyga nėra tenkinama, išvesti sakinį “Bandykite kitą kartą.”.
+*/
+
+/* 1.	Tarpusavyje palyginti skaičiaus tipo kintamuosius:
+a.	kuris didesnis
+b.	kuris mažesnis
+c.	ar jie lygūs
+d.	ar jie nelygūs
+e.	kuris didesnis arba lygus
+f.	kuris mažesnis arba lygus
+*/
+
+
+var firsNumb1 = 15;
+var secondNumb1 = 15;
+
+const rez = "Pomidoras";
+const rez1 = "Bandykite kitą kartą.";
+
+if (firsNumb1 > secondNumb1) { console.log(rez, ":" + firsNumb1 + " > " + secondNumb1 + "\n" + firsNumb1 + " yra" + " didesnis uz " + secondNumb1 + "!"); }
+else if (firsNumb1 < secondNumb1) { console.log(rez1, `: \n ${firsNumb1} yra mazeznis uz ${secondNumb1}`) };
+
+if (firsNumb1 === secondNumb1) { console.log(rez, `:\n ${firsNumb1} yra lygus ${secondNumb1}`) };
+if (firsNumb1 != secondNumb1) { console.log(`Skaiciai nelygus tarp saves!\n`) };
 
