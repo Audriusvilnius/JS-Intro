@@ -109,3 +109,34 @@ else if (firsNumb1 < secondNumb1) { console.log(rez1, `: \n ${firsNumb1} yra maz
 if (firsNumb1 === secondNumb1) { console.log(rez, `:\n ${firsNumb1} yra lygus ${secondNumb1}`) };
 if (firsNumb1 != secondNumb1) { console.log(`Skaiciai nelygus tarp saves!\n`) };
 
+/* 2.	Išvesti teksto tipo kintamųjų ilgius */
+
+let firstText = '[nodemon] clean exit - waiting for changes before resta)'
+let secondText = 'at Module._compile (node:internal/modules/cjs/loader:1090:27)'
+//let firstText = '[nodemon] clean exit - waiting for changes before resta)'
+//let firstText = 'at Module._compile (node:internal/modules/cjs/loader:1090:27)'
+
+let length1 = firstText.length;
+let length2 = secondText.length;
+
+let skirtumas;
+
+console.log(length1);
+console.log(length2);
+
+console.log(length1,length2);
+
+/* 3.	Tarpusavyje palyginti teksto tipo kintamųjų ilgius:
+a.	kuris didesnis
+b.	kuris mažesnis
+c.	ar jie lygūs
+d.	ar jie nelygūs
+e.	kuris didesnis arba lygus
+f.	kuris mažesnis arba lygus
+*/
+
+if (length1 > length2) { console.log("Pirmas tekstas turi " + length1 + " simboli " + "antras tekstas turi "+length2 + " simbolius\n" + length1 + " simbolis yra daugiau uz " + length2 + " simbolius!"); skirtumas = length1-length2;  console.log(`Pirmas tekstas turi daugiau ant ${skirtumas} simboliu`) }
+else if (length1 < length2) { console.log(`Pirmas tekstas turi  ${length1} simboliu jis yra trumpesnia uz antro teksto ilgi, antro teksto ilgis yra ${length2} simbolis.`);  skirtumas = length2-length1;  console.log(`Antras tekstas turi daugiau ant ${skirtumas} simboliu.`) };
+
+if (length1 === length2) { console.log(`Pirmo ir antro teksto ilgiai yra po ${length1} simboli, teksto ilgiai vienodi`) };
+if (length1 != length2) { console.log(`Teksto ilgai nelygus tarpusavyje!\n`) };
