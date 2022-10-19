@@ -14,7 +14,7 @@ const mokiniai = ['Petras', 'Jonas', 'Maryte'];
 
 const turiPapeikima = [true, false, false];
 
-const pazymiai = [10, 2, 8, 4, 6];
+const pazymiai = [10, 10, 10, 4, 6];
 console.log(pazymiai);
 
 const ap1 = pazymiai[0];
@@ -29,7 +29,7 @@ console.log("Masyvo i = ", kiekis);
 console.log(ap1);
 console.log(ap4);
 
-console.log(ap1, ap2, ap3, ap4, ap5);
+console.log((ap1+ap2+ ap3+ ap4+ ap5)/kiekis);
 
 
 const pirkiniai = [
@@ -48,14 +48,14 @@ console.log(pirkiniai);
 const prekesIndex = 0;
 
 const preke = pirkiniai[prekesIndex];
-const prekesKiekis = preke[1];
 const prekesPavadinimas = preke[0];
+const prekesKiekis = preke[1];
 
 console.log(preke);
 console.log(prekesKiekis);
 console.log(prekesPavadinimas);
 
-console.log(`reiknu pirkti ${prekesPavadinimas} ${prekesKiekis}`);
+console.log(`Reik pirkti ${prekesPavadinimas} ${prekesKiekis}`);
 
 // mokykla > klases > mokiniai > tevus > telefonai
 const mokykla = [
