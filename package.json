@@ -4,6 +4,8 @@
   "main": "index.js",
   "scripts": {
     "pratimai": "nodemon ./js/pratimai.js",
+    "boolean": "nodemon ./js/03-boolean.js",
+    "array": "nodemon ./js/04-array.js",
     "numbers": "nodemon ./js/01-numbers.js",
     "string": "nodemon ./js/02-string.js",
     "dev": "nodemon",
