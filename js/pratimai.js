@@ -57,7 +57,7 @@ a.	Rezultatą išvesti į console
 */
 
 const sumString = firstString + ' ' + secondString + ' ' + lastString;
-console.log(sumString)
+console.log(sumString);
 console.log(lastString + ' ' + secondString + ' ' + firstString);
 
 /*3.	Apskaičiuoti vertę iš sąrašų kurių verčių tipas yra skaičiai, pagal pateiktą logiką
@@ -103,18 +103,18 @@ var secondNumb1 = 15;
 const rez = "Pomidoras";
 const rez1 = "Bandykite kitą kartą.";
 
-if (firsNumb1 > secondNumb1) { 
-    console.log(rez, ":" + firsNumb1 + " > " + secondNumb1 + "\n" + firsNumb1 + " yra" + " didesnis uz " + secondNumb1 + "!"); 
+if (firsNumb1 > secondNumb1) {
+    console.log(rez, ":" + firsNumb1 + " > " + secondNumb1 + "\n" + firsNumb1 + " yra" + " didesnis uz " + secondNumb1 + "!");
 }
-else if (firsNumb1 < secondNumb1) { 
+else if (firsNumb1 < secondNumb1) {
     console.log(rez1, `: \n ${firsNumb1} yra mazeznis uz ${secondNumb1}`);
 };
 
-if (firsNumb1 === secondNumb1) { 
-    console.log(rez, `:\n ${firsNumb1} yra lygus ${secondNumb1}`); 
+if (firsNumb1 === secondNumb1) {
+    console.log(rez, `:\n ${firsNumb1} yra lygus ${secondNumb1}`);
 };
 if (firsNumb1 != secondNumb1) {
-     console.log(`Skaiciai nelygus tarp saves!\n`) 
+    console.log(`Skaiciai nelygus tarp saves!\n`)
 };
 
 /* 2.	Išvesti teksto tipo kintamųjų ilgius */
