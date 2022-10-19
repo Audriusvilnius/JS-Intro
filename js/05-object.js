@@ -36,27 +36,31 @@ console.log(marytesIsMarred);
 
 const mokykla = {
     1: [
-        { name: 'Petras', 
-            tevai: { 
+        {
+            name: 'Petras',
+            tevai: {
                 tete: [112],
                 mama: [111]
             }
         },
-        { name: 'Maryte',
-            tevai: { 
+        {
+            name: 'Maryte',
+            tevai: {
                 tete: [112112],
                 mama: [111911]
             }
         },
     ],
     2: [
-        { name: 'Jonas',
+        {
+            name: 'Jonas',
             tevai: {
                 tete: [211],
                 mama: [219]
             }
         },
-        { name: 'Ona',
+        {
+            name: 'Ona',
             tevai: {
                 tete: [211211],
                 mama: [219119, 299]
@@ -64,13 +68,15 @@ const mokykla = {
         },
     ],
     3: [
-        { name: 'Deivis',
+        {
+            name: 'Deivis',
             tevai: {
                 tete: [311],
                 mama: [344]
             }
         },
-        { name: 'Birute',
+        {
+            name: 'Birute',
             tevai: {
                 tete: [311311],
                 mama: [344344, 312]
@@ -96,3 +102,69 @@ const test2 = mokykla[3][0].tevai.mama[0];
 //console.log(kazkas3);
 //console.log(test1);
 console.log(test2);
+
+
+// sugalvoti klase ir objekta objekte
+
+const cars = {
+    light: [
+        {
+        model: 'van',
+            kebulas: [2650, 3150, 4150, 5000]
+        },
+    {
+        model: 'truck',
+            kebulas: [2650, 3150, 4150, 5000, 5200]
+    },
+    ],
+    medium: [
+        {
+        model: 'van',
+            kebulas: [2600, 3100, 3750, 4100]
+        },
+        {
+        model: 'truck',
+            kebulas: [2650, 3150, 4150, 5000, 5300]
+        },
+    ],
+    havy: [
+        {
+        model: 'van',
+            kebulas: [3600, 3300, 3550, 4500]
+        },
+        {
+        model: 'truck',
+            kebulas: [3600, 3300, 3550, 4500, 5000],
+        },
+    ],
+    havy_off: [
+        {
+        model: 'van',
+            kebulas: [3600, 3300, 3550, 4500]
+        },
+        {
+        model: 'truck',
+            kebulas: [3600, 3300, 3550, 4500, 5000],
+            anstatas: [3660, 3350, 3555, 4550, 5500],
+        },
+    ],
+};
+const light = 'light';
+const medium = 'medium';
+const havy = 'havy';
+const havy_off = 'havy_off';
+const van = 0;
+const truck = 1;
+const bazes = 0;
+const bazel = 1;
+const bazexl = 2;
+const bazexxl = 3;
+const baze3xl = 4;
+
+
+
+const confyg = cars[havy_off][truck].anstatas[baze3xl]; //ber deklaruotas kintamasias
+const confyg1 = cars[medium][1].kebulas[3]; // per masyvo vietas
+
+console.log(confyg);
+console.log(confyg1);
