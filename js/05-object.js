@@ -109,41 +109,41 @@ console.log(test2);
 const cars = {
     light: [
         {
-        model: 'van',
+            model: 'van',
             kebulas: [2650, 3150, 4150, 5000]
         },
-    {
-        model: 'truck',
+        {
+            model: 'truck',
             kebulas: [2650, 3150, 4150, 5000, 5200]
-    },
+        },
     ],
     medium: [
         {
-        model: 'van',
+            model: 'van',
             kebulas: [2600, 3100, 3750, 4100]
         },
         {
-        model: 'truck',
+            model: 'truck',
             kebulas: [2650, 3150, 4150, 5000, 5300]
         },
     ],
     havy: [
         {
-        model: 'van',
+            model: 'van',
             kebulas: [3600, 3300, 3550, 4500]
         },
         {
-        model: 'truck',
+            model: 'truck',
             kebulas: [3600, 3300, 3550, 4500, 5000],
         },
     ],
     havy_off: [
         {
-        model: 'van',
+            model: 'van',
             kebulas: [3600, 3300, 3550, 4500]
         },
         {
-        model: 'truck',
+            model: 'truck',
             kebulas: [3600, 3300, 3550, 4500, 5000],
             anstatas: [3660, 3350, 3555, 4550, 5500],
         },
