@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "function": "nodemon ./js/06-function.js",
     "pratimai": "nodemon ./js/pratimai.js",
     "boolean": "nodemon ./js/03-boolean.js",
     "object": "nodemon ./js/05-object.js",
