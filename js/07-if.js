@@ -7,6 +7,8 @@ Operatoriai: <, >, ==, !=, >=, <=, ===, !==
 Naudotini: <, >, >=, <=, ===, !==
 Nenaudotini: ==, !=
 
+Loginiai && (and) , || (or), ! (negate neiginys)
+
 Sablonai:
 if () {}
 if () {} else {}
