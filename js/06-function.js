@@ -28,7 +28,7 @@ console.log(s31);
 function pvm(kaina){
     const pvm = 21;
     const gslutuneKaina = kaina * (pvm/100 +1);
-    return (gslutuneKaina);
+    return Math.round(gslutuneKaina);
 }
 const kainaBePvm1 = 5;
 const kainaBePvm2 = 70;
@@ -54,6 +54,7 @@ const asmuo2 = prisistatymas("Maryte", 23);
 
 console.log(asmuo1);
 console.log(asmuo2);
-console.log(prisistatymas("Zita", 18));
+console.log(prisistatymas("Zita", 18)); // tiesiai i funkcija paduot reiksme galima
+
 
 
