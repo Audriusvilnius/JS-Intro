@@ -5,12 +5,13 @@
   "scripts": {
     "if": "nodemon ./js/07-if.js",
     "function": "nodemon ./js/06-function.js",
-    "pratimai": "nodemon ./js/pratimai.js",
-    "boolean": "nodemon ./js/03-boolean.js",
     "object": "nodemon ./js/05-object.js",
     "array": "nodemon ./js/04-array.js",
-    "numbers": "nodemon ./js/01-numbers.js",
+    "boolean": "nodemon ./js/03-boolean.js",
     "string": "nodemon ./js/02-string.js",
+    "numbers": "nodemon ./js/01-numbers.js",
+    "pratimai": "nodemon ./js/pratimai.js",
+    "codewars": "nodemon ./js/codewars.js",
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -102,3 +102,13 @@ const tevuIndex = 0;
 const telefonai = mokykla[klase - 1][1][mokinioIndex][1][tevuIndex][1].length;
 console.log(telefonai);
 
+const raide = ['a', 'a', 'c', 'd', 'f'];
+console.log(raide);
+
+console.log( raide[0]);
+console.log( raide[1]);
+console.log( raide[2]);
+console.log( raide[3]);
+console.log( raide[4]);
+ if (raide[0] !== raide[1]){console.log("Klaida")}
+    else if (raide[0] == raide[1]){console.log("Ta pati")};
