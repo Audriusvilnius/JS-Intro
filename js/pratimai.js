@@ -134,6 +134,8 @@ console.log(length2);
 
 console.log(length1, length2);
 
+
+console.log('--------------------------------------------');
 /* 3.	Tarpusavyje palyginti teksto tipo kintamųjų ilgius:
 a.	kuris didesnis
 b.	kuris mažesnis
@@ -161,13 +163,48 @@ if (length1 != length2) {
     console.log(`Teksto ilgai nelygus tarpusavyje!\n`);
 };
 
-
+console.log('--------------------------------------------');
 
 
 
 console.clear();
 
+/* Funkcijos
 
+Parašyti funkcijas, kurios atitinka pateiktus reikalavimus, jei įvykdo reikiamus testus
+
+1.	Funkcija pavadinimu “tusciaFunkcija”:
+a.	nepriima jokių kintamųjų
+b.	neatlieka jokios vidinės logikos
+c.	gražina boolean tipo reikšmę “false”
+d.	TESTAS:
+i.	console.log( tusciaFunkcija() );
+ii.	rezultatas: false
+*/
+
+
+function tusciaFunkcija(tuscia) {
+    return false;
+}
+tuscia = true;
+console.log(tusciaFunkcija(tuscia));
+
+
+
+console.log('--------------------------------------------');
+
+
+/*
+1.	Funkcija pavadinimu “daugyba”:
+a.	priima du skaičiaus tipo kintamuosius
+b.	atskirame kintamajame įsimena sandaugos reikšmę
+c.	gražina saudaugos rezultatą
+d.	TESTAI:
+i.	console.log( daugyba( skaicius1, skaicius2 ) );
+ii.	console.log( daugyba( skaicius3, skaicius2 ) );
+iii.	console.log( daugyba( skaicius1, skaicius3 ) );
+iv.	rezultatas: teisingos reikšmės;
+*/
 
 function multiply(a, b) {
     if (typeof a !== 'number') {
@@ -198,6 +235,7 @@ console.log(multiply(5, 'labas'), '->', 'ERROR');
 console.log(multiply('7', 5), '->', 'ERROR');
 console.log(multiply('labas', 5), '->', 'ERROR');
 
+console.log('--------------------------------------------');
 
 
 
@@ -266,10 +304,10 @@ for (let i = 0; i < list.length; i = i + 1) {
     sumaIntervale(pradzia, pabaiga);
 }
 
-
+console.log('--------------------------------------------');
 
 /*
-
+ 
 2.	panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
 a.	pvz.: “abcdef” -> “fedcba”
 */
@@ -286,6 +324,8 @@ function invertString(zodis) {
 let zodis = 'medus';
 console.log(invertString(zodis));
 
+
+console.log('--------------------------------------------');
 
 /*
 3.	Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
@@ -327,3 +367,48 @@ for (y = 0; y < dalikliai.length; y++) {
             console.log(beLiekanos(dalikliai[y], Pradzia[z], Pabaiga[z]));
         }
 };
+
+console.log('--------------------------------------------');
+/*
+3.	Funkcija pavadinimu “skaitmenuKiekisSkaiciuje”:
+a.	priima vieną kintamąjį
+b.	jei perduotas kintamasis nėra skaičiaus tipo, tai išveda pranešimą “Pateikta netinkamo tipo reikšmė.”
+c.	priešingu atveju, funkcija tęsia darbą
+d.	į atskirą kintamąjį įsimena skaičių sudarančių skaitmenų kiekį
+e.	gražina skaitmenų kiekį
+f.	TESTAI:
+i.	console.log( skaitmenuKiekisSkaiciuje( 5 ) );
+1.	rezultatas: 1
+ii.	console.log( skaitmenuKiekisSkaiciuje( 781 ) );
+1.	rezultatas: 3
+iii.	console.log( skaitmenuKiekisSkaiciuje( 37060123456 ) );
+1.	rezultatas: 11
+iv.	console.log( skaitmenuKiekisSkaiciuje( true ) );
+1.	rezultatas: “Pateikta netinkamo tipo reikšmė.”
+v.	console.log( skaitmenuKiekisSkaiciuje( “asd” ) );
+1.	rezultatas: “Pateikta netinkamo tipo reikšmė.”
+vi.	console.log( skaitmenuKiekisSkaiciuje( NaN ) );
+1.	rezultatas: “Pateikta netinkamo tipo reikšmė.”
+*/
+
+
+function skaitmenuKiekisSkaiciuje(number) {
+    let count = 0;
+    if (typeof number !== 'number'|| typeof number == NaN){
+        return `Pateikta netinkamo tipo reikšmė.`;
+    }else {
+    number = Math.abs(number).toString();
+    for (i = 0; i < number.length; i++) {
+       console.log(number[i]);
+        if (number[i] !== `.`) {
+            count++;
+        }
+    }}
+
+    return count;
+
+
+};
+
+let inputData = NaN;
+console.log(skaitmenuKiekisSkaiciuje(inputData));
