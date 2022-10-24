@@ -400,7 +400,7 @@ function skaitmenuKiekisSkaiciuje(number) {
     } else {
         number = Math.abs(number).toString();
         for (i = 0; i < number.length; i++) {
-            console.log(number[i]);
+            //console.log(number[i]);
             if (number[i] !== `.`) {
                 count++;
             }
@@ -410,8 +410,61 @@ function skaitmenuKiekisSkaiciuje(number) {
     return count;
 };
 
-let inputData = "Done";
+let inputData = 0.3334;
 console.log(`rezultatas:`, (skaitmenuKiekisSkaiciuje(inputData)));
 
+
+console.log('--------------------------------------------');
+
+
+/*
+4.	Funkcija pavadinimu “didziausiasSkaiciusSarase”:
+a.	priima vieną kintamąjį
+b.	jei perduotas kintamasis nėra sąrašo tipo, tai išveda pranešimą “Pateikta netinkamo tipo reikšmė.”
+c.	jei sąrašas yra tuščias, tai išveda pranešimą “Pateiktas sąrašas negali būti tuščias.”
+d.	priešingu atveju, funkcija tęsia darbą
+e.	pereina per visą pateiktą sąrašą ir į atskirą kintamąjį įsimena skaičių, kuris tuo metu yra didžiausias
+f.	gražina didžiausią surastą skaičių
+g.	TESTAI:
+i.	console.log( didziausiasSkaiciusSarase( [ 1 ] ) );
+1.	rezultatas: 1
+ii.	console.log( didziausiasSkaiciusSarase( [ 1, 2, 3 ] ) );
+1.	rezultatas: 3
+iii.	console.log( didziausiasSkaiciusSarase( [ -5, 78, 14, 0, 18 ] ) );
+1.	rezultatas: 78
+iv.	console.log( didziausiasSkaiciusSarase( [ 69, 69, 69, 69, 66 ] ) );
+1.	rezultatas: 69
+v.	console.log( didziausiasSkaiciusSarase( [ -1, -2, -3, -4, -5, -6, -7, -8 ] ) );
+1.	rezultatas: -1
+vi.	console.log( didziausiasSkaiciusSarase( “pomidoras” ) );
+1.	rezultatas: “Pateikta netinkamo tipo reikšmė.”
+vii.	console.log( didziausiasSkaiciusSarase( [] ) );
+1.	rezultatas: “Pateiktas sąrašas negali būti tuščias.”
+*/
+
+function didziausiasSkaiciusSarase(kintamasis) {
+    let max;
+    if (Array.isArray(kintamasis) !== true) {
+        return `Pateikta netinkamo tipo reikšmė.`;
+    }
+    if (kintamasis.length == 0) {
+        return `Pateiktas sąrašas negali būti tuščias.`
+    } else {
+        max = kintamasis[0];
+        for (i = 0; i < kintamasis.length; i++) {
+            if (typeof kintamasis[i] !== 'number') {
+                max = `Pateikta netinkamo tipo reikšmė.`;
+            } 
+            else if (kintamasis[i] > max) {
+                max = kintamasis[i];
+            }
+        }
+
+    }
+    return max;
+}
+
+let A1 = [-1, -2, -3, -4, -5, -6, -7, -8];
+console.log(`rezultatas: `,(didziausiasSkaiciusSarase(A1)));
 
 console.log('--------------------------------------------');
