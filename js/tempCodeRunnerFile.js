@@ -27,39 +27,3 @@ for (let i = 0; i < marks.length; i++) {
 const avarage = total / count;
 
 console.log('Avarage:', avarage);
-
-const a = 30;
-const b = 40;
-
-for (let i = a; i <= b; i++) {
-    console.log(i);
-};
-
-
-
-
-function sumaIntervale(start, end) {
-
-
-    let suma = 0;
-    for (let i = start; i <= end; i++) {
-        suma = suma + i;}
-    
-    console.log(`${start} ... ${end} = ${suma}`);
-    return suma;
-}
-
-
-
-const pradzios = [0, 0, 0, 574, -50, -70];
-const pabaigos = [0, 4, 100, 815, 50, 30];
-
-for (let i = 0; i < pabaigos.length; i++) {
-    sumaIntervale(pradzios[i], pabaigos[i]);
-
-}
-
-const abc = ['a','b','c','d','e'];
-console.log(abc);
-
-
