@@ -394,20 +394,24 @@ vi.	console.log( skaitmenuKiekisSkaiciuje( NaN ) );
 
 function skaitmenuKiekisSkaiciuje(number) {
     let count = 0;
-    
-    if (typeof number !== 'number'|| isNaN(number)){
+
+    if (typeof number !== 'number' || isNaN(number)) {
         return `Pateikta netinkamo tipo reikšmė.`;
-    }else {
-    number = Math.abs(number).toString();
-    for (i = 0; i < number.length; i++) {
-       console.log(number[i]);
-        if (number[i] !== `.`) {
-            count++;
+    } else {
+        number = Math.abs(number).toString();
+        for (i = 0; i < number.length; i++) {
+            console.log(number[i]);
+            if (number[i] !== `.`) {
+                count++;
+            }
         }
-    }}
+    }
 
     return count;
 };
 
 let inputData = "Done";
-console.log(`rezultatas:`,(skaitmenuKiekisSkaiciuje(inputData)));
+console.log(`rezultatas:`, (skaitmenuKiekisSkaiciuje(inputData)));
+
+
+console.log('--------------------------------------------');
