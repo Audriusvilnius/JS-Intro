@@ -36,7 +36,7 @@ for (let i = a; i <= b; i++) {
 };
 
 
-
+//________________________________________________
 
 function sumaIntervale(start, end) {
 
@@ -58,8 +58,11 @@ for (let i = 0; i < pabaigos.length; i++) {
     sumaIntervale(pradzios[i], pabaigos[i]);
 
 }
+//_________________________________________________
 
-const abc = ['a','b','c','d','e'];
+console.log('--------------');
+
+const abc = ['a', 'b', 'c', 'd', 'e'];
 console.log(abc);
 
 

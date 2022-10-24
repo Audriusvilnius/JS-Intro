@@ -160,3 +160,170 @@ if (length1 === length2) {
 if (length1 != length2) {
     console.log(`Teksto ilgai nelygus tarpusavyje!\n`);
 };
+
+
+
+
+
+console.clear();
+
+
+
+function multiply(a, b) {
+    if (typeof a !== 'number') {
+        return 'ERROR: pirmas parametras turi buti normalus skaicius.';
+    }
+    if (typeof b !== 'number') {
+        return 'ERROR: antras parametras turi buti normalus skaicius.';
+    }
+    const c = a * b;
+    return c;
+}
+
+console.log(multiply(2, 2), '->', 4);
+console.log(multiply(6, 8), '->', 48);
+console.log(multiply(-2, -5), '->', 10);
+console.log(multiply(-2, 5), '->', -10);
+console.log(multiply(2, -5), '->', -10);
+console.log(multiply(2, 0), '->', 0);
+console.log(multiply(0, 2), '->', 0);
+console.log(multiply(0, 0), '->', 0);
+console.log(multiply(3.14, 2), '->', 6.28);
+console.log(multiply(2, 3.14), '->', 6.28);
+console.log(multiply(3.5, 2.5), '->', 8.75);
+console.log(multiply(Infinity, 2.5), '->', Infinity);
+console.log(multiply(NaN, 2.5), '->', NaN);
+console.log(multiply(5, '7'), '->', 'ERROR');
+console.log(multiply(5, 'labas'), '->', 'ERROR');
+console.log(multiply('7', 5), '->', 'ERROR');
+console.log(multiply('labas', 5), '->', 'ERROR');
+
+
+
+
+//Ciklo for panaudojimas
+/*
+1.	Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
+a.	0 … 0
+b.	0 … 4
+c.	0 … 100
+d.	574 … 815
+e.	-50 … 50
+f.	-70 … 30
+*/
+
+
+function sumaIntervale(start, end) {
+
+
+    let suma = 0;
+    for (let i = start; i <= end; i++) {
+        suma = suma + i;
+    }
+
+    console.log(`${start} ... ${end} = ${suma}`);
+    return suma;
+}
+
+
+
+const pradzios = [0, 0, 0, 574, -50, -70];
+const pabaigos = [0, 4, 100, 815, 50, 30];
+
+for (let i = 0; i < pabaigos.length; i++) {
+    sumaIntervale(pradzios[i], pabaigos[i]);
+
+}
+
+
+
+console.log('----Per objekta sprendimas---------');
+
+
+
+
+const list = [
+    {},
+    { end: 4 },
+    { end: 100 },
+    { start: 574, end: 815 },
+    { start: -50, end: 50 },
+    { start: -50 },
+    { start: -70, end: 30 },
+];
+
+let obj = null;
+for (let i = 0; i < list.length; i = i + 1) {
+    obj = list[i];
+    let pradzia = obj.start;
+    let pabaiga = obj.end;
+    if (!pradzia) {
+        pradzia = 0;
+    }
+    if (!pabaiga) {
+        pabaiga = 0;
+    }
+    sumaIntervale(pradzia, pabaiga);
+}
+
+
+
+/*
+
+2.	panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
+a.	pvz.: “abcdef” -> “fedcba”
+*/
+
+function invertString(zodis) {
+    let stringConvert = "";
+    for (let i = zodis.length - 1; i >= 0; i--) {
+        const symbol = zodis[i];
+        stringConvert += symbol;
+    }
+    return stringConvert;
+
+}
+let zodis = 'medus';
+console.log(invertString(zodis));
+
+
+/*
+3.	Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
+a.	0 - 11
+b.	8 - 31
+c.	-18 - 18
+d.	rezultatą pateikti tokiu formatu:
+i.	Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 3 yra 4 vienetai.
+ii.	Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 5 yra 3 vienetai.
+iii.	Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai.
+*/
+
+function beLiekanos(daliklis, start, ends) {
+    atsakymas = 'nera dear';
+    let count = 0;
+    let sum = 0;
+    let skaicius = start;
+    for (i = start; i <= ends; i++) {
+
+        //console.log(skaicius);
+        if (skaicius % daliklis == 0) {
+            count++;
+            skaicius++;
+        }
+        else { skaicius++; }
+
+    }
+    atsakymas = `Skaičių intervale tarp ${start} ir ${ends}, besidalijančių be liekanos iš ${daliklis} yra ${count} vienetai.`
+    return atsakymas;
+}
+const dalikliai = [3, 5, 7];
+const Pradzia = [0, 8, -18];
+const Pabaiga = [11, 31, 18];
+
+
+for (y = 0; y < dalikliai.length; y++) {
+    for (z = 0; z < Pradzia.length; z++)
+        for (i = 0; i < dalikliai.length; i++) {
+            console.log(beLiekanos(dalikliai[y], Pradzia[z], Pabaiga[z]));
+        }
+};
