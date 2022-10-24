@@ -394,7 +394,8 @@ vi.	console.log( skaitmenuKiekisSkaiciuje( NaN ) );
 
 function skaitmenuKiekisSkaiciuje(number) {
     let count = 0;
-    if (typeof number !== 'number'|| typeof number == NaN){
+    
+    if (typeof number !== 'number'|| isNaN(number)){
         return `Pateikta netinkamo tipo reikšmė.`;
     }else {
     number = Math.abs(number).toString();
@@ -406,9 +407,7 @@ function skaitmenuKiekisSkaiciuje(number) {
     }}
 
     return count;
-
-
 };
 
-let inputData = NaN;
-console.log(skaitmenuKiekisSkaiciuje(inputData));
+let inputData = "Done";
+console.log(`rezultatas:`,(skaitmenuKiekisSkaiciuje(inputData)));
