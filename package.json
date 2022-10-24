@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "for": "nodemon ./js/08-for.js",
     "if": "nodemon ./js/07-if.js",
     "function": "nodemon ./js/06-function.js",
     "object": "nodemon ./js/05-object.js",

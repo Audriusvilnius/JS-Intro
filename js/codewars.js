@@ -49,6 +49,7 @@ Example
 
 
 */
+/*
 function duplicateCount(text) {
     let lengthtext = text.length;
     let count = 0;
@@ -58,7 +59,7 @@ function duplicateCount(text) {
     if (lengthtext===0){return 0;};
     if (lengthtext>0){
     for (i = 0; i < text.length; i++) {
-        for (y = i + 1; y < text.length-1; y++) {
+        for (y = i + 1; y < text.length-2; y++) {
             if (usingArrayFrom[i] == usingArrayFrom[y]) { count++; }  
         }
         return count;
@@ -74,3 +75,30 @@ console.log(duplicateCount("aabbcde"), 2);
 console.log(duplicateCount("aabBcde"), 2, "should ignore case");
 console.log(duplicateCount("Indivisibility"), 1)
 console.log(duplicateCount("Indivisibilities"), 2, "characters may not be adjacent")
+*/
+
+/* Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+
+Note: a and b are not ordered!
+
+Examples (a, b) --> output (explanation)
+
+(1, 0) --> 1 (1 + 0 = 1)
+(1, 2) --> 3 (1 + 2 = 3)
+(0, 1) --> 1 (0 + 1 = 1)
+(1, 1) --> 1 (1 since both are same)
+(-1, 0) --> -1 (-1 + 0 = -1)
+(-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)*/
+
+function getSum( a,b )
+{   var sum =0;
+    if(a === b) sum = a;
+
+ 
+   return a + b;
+}
+
+
+console.log(getSum(0,-1),-1);
+console.log(getSum(0,1),1);
+console.log(getSum(340,117),51067);
