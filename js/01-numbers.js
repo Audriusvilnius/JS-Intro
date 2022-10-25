@@ -167,4 +167,84 @@ const floor6 = Math.floor(nf6);
 console.log(nf6, '->', floor6);
 
 
+const n73 = 7/3;
+console.log(n73);
 
+const n103 = 10%3;
+console.log(n103);
+
+function arLyginis(n){
+    return n%2 ===0;
+}
+console.log(arLyginis(3));
+
+
+// function saveikojiDalis(skaicius, daliklis){
+// const dalmuo = 0;
+
+// return (skaicius - (skaicius%daliklis))/daliklis;
+
+// console.log(saveikojiDalis(7,3), '->', 2);
+
+
+const apk1 = (2/3).toFixed(2);
+
+
+console.log(apk1);
+console.log(2/3);
+
+
+console.log('skaiciu perkonvertavimasc parsenemas');
+
+const sp1 ='777.7777';
+const sp2n = parseInt(sp1);
+const sp3n = parseFloat(sp1);
+
+console.log(sp1)
+console.log(sp2n)
+console.log(sp3n)
+
+console.log('------------------------------------')
+
+console.log(parseInt(1));
+console.log(parseInt(3.14));
+console.log(parseInt('1'));
+console.log(parseInt('3.14'));
+console.log(parseInt(true));
+console.log(parseInt(false));
+console.log(parseInt([]));
+console.log(parseInt([1,2,3,4,]));
+console.log(parseInt([7,2,3,4,]));
+console.log(parseInt({}));
+console.log(parseInt({1:2,b:3}));
+
+
+
+console.log('------------------------------------')
+
+console.log(parseFloat(1));
+console.log(parseFloat(3.14));
+console.log(parseFloat('1'));
+console.log(parseFloat('3.14'));
+console.log(parseFloat(true));
+console.log(parseFloat(false));
+console.log(parseFloat([]));
+console.log(parseFloat([1,2,3,4,]));
+console.log(parseFloat([7,2,3,4,]));
+console.log(parseFloat({}));
+console.log(parseFloat({1:2,b:3}));
+
+console.log('------------------------------------')
+
+
+console.log(+1);
+console.log(+3.14);
+console.log(+'1');
+console.log(+'3.14');
+console.log(+true);
+console.log(+false);
+console.log(+[]);
+console.log(+[10,2,3,4,]);
+console.log(+[7,2,3,4,]);
+console.log(+{});
+console.log(+{1:2,b:3});
