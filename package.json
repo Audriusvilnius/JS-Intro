@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "sumintervale": "nodemon ./js/12-sumintervale.js",
     "ternary": "nodemon ./js/11-ternary.js",
     "reverse": "nodemon ./js/10-reverse.js",
     "for": "nodemon ./js/08-for.js",
