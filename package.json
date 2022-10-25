@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "ternary": "nodemon ./js/11-ternary.js",
+    "reverse": "nodemon ./js/10-reverse.js",
     "for": "nodemon ./js/08-for.js",
     "if": "nodemon ./js/07-if.js",
     "function": "nodemon ./js/06-function.js",

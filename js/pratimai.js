@@ -321,7 +321,7 @@ function invertString(zodis) {
     return stringConvert;
 
 }
-let zodis = 'medus';
+let zodis = 'alus';
 console.log(invertString(zodis));
 
 
@@ -464,7 +464,7 @@ function didziausiasSkaiciusSarase(kintamasis) {
     return max;
 }
 
-let A1 = [-1, -2, -3, -4, -5, -6, -7, -8];
+let A1 = [-1, -2, -3, 9, -5, -6, -7, -8];
 console.log(`rezultatas: `,(didziausiasSkaiciusSarase(A1)));
 
 console.log('--------------------------------------------');
