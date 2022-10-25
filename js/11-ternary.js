@@ -30,3 +30,21 @@ const age = 20;
 const zinute = `${age >= 21 ? '' : 'ne'}pilnametis`;
 
 console.log(zinute);
+
+console.log(`-------------------------`);
+
+
+const a = 1>3 ? 3:4;
+console.log(a);
+
+
+
+console.log(`-------------------------`);
+
+
+const b = 1 < 2 
+            ? 3 > 4 
+            ? 5
+            :6
+        :7;
+console.log(b);
