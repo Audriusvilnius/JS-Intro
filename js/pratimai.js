@@ -207,10 +207,10 @@ iv.	rezultatas: teisingos reikšmės;
 */
 
 function multiply(a, b) {
-    if (typeof a !== 'number') {
+    if (typeof a !== 'number'|| !isFinite(number)) {
         return 'ERROR: pirmas parametras turi buti normalus skaicius.';
     }
-    if (typeof b !== 'number') {
+    if (typeof b !== 'number'|| !isFinite(number)) {
         return 'ERROR: antras parametras turi buti normalus skaicius.';
     }
     const c = a * b;
@@ -390,12 +390,12 @@ v.	console.log( skaitmenuKiekisSkaiciuje( “asd” ) );
 vi.	console.log( skaitmenuKiekisSkaiciuje( NaN ) );
 1.	rezultatas: “Pateikta netinkamo tipo reikšmė.”
 */
-
+// isNaN = !isFinite - sugaudo visas reiksmes iskreitas NaN Infinity ir tt
 
 function skaitmenuKiekisSkaiciuje(number) {
     let count = 0;
 
-    if (typeof number !== 'number' || isNaN(number)) {
+    if (typeof number !== 'number' || !isFinite(number) ) {
         return `Pateikta netinkamo tipo reikšmė.`;
     } else {
         number = Math.abs(number).toString();
