@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "sumintervale": "nodemon ./js/12-sumintervale.js",
+    "strinmetod": "nodemon ./js/14-string-metod.js",
     "ternary": "nodemon ./js/11-ternary.js",
     "reverse": "nodemon ./js/10-reverse.js",
     "for": "nodemon ./js/08-for.js",

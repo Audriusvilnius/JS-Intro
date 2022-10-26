@@ -207,10 +207,10 @@ iv.	rezultatas: teisingos reikšmės;
 */
 
 function multiply(a, b) {
-    if (typeof a !== 'number'|| !isFinite(number)) {
+    if (typeof a !== 'number'|| !isFinite(a)) {
         return 'ERROR: pirmas parametras turi buti normalus skaicius.';
     }
-    if (typeof b !== 'number'|| !isFinite(number)) {
+    if (typeof b !== 'number'|| !isFinite(b)) {
         return 'ERROR: antras parametras turi buti normalus skaicius.';
     }
     const c = a * b;
@@ -391,6 +391,7 @@ vi.	console.log( skaitmenuKiekisSkaiciuje( NaN ) );
 1.	rezultatas: “Pateikta netinkamo tipo reikšmė.”
 */
 // isNaN = !isFinite - sugaudo visas reiksmes iskreitas NaN Infinity ir tt
+// " "+a === "NaN" - pagauna NaN reiksme
 
 function skaitmenuKiekisSkaiciuje(number) {
     let count = 0;
@@ -399,6 +400,17 @@ function skaitmenuKiekisSkaiciuje(number) {
         return `Pateikta netinkamo tipo reikšmė.`;
     } else {
         number = Math.abs(number).toString();
+        // const nString = ('' + number).replace('.', '') sprendimas per kkomanda
+        /*
+            const str = '' + n;
+            let count = str.length;
+            if( n < 0 ) {
+                count--;
+            }
+            if (n % 1 !==0){
+                count--;
+            }
+        */
         for (let i = 0; i < number.length; i++) {
             //console.log(number[i]);
             if (number[i] !== `.`) {
@@ -410,7 +422,7 @@ function skaitmenuKiekisSkaiciuje(number) {
     return count;
 };
 
-let inputData = 0.3334;
+let inputData = 994.4;
 console.log(`rezultatas:`, (skaitmenuKiekisSkaiciuje(inputData)));
 
 
