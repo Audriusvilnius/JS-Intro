@@ -456,15 +456,15 @@ vii.	console.log( didziausiasSkaiciusSarase( [] ) );
 
 function didziausiasSkaiciusSarase(kintamasis) {
     let max;
-    if (Array.isArray(kintamasis) !== true) {
+    if (Array.isArray(kintamasis) !== true ) {
         return `Pateikta netinkamo tipo reikšmė.`;
     }
-    if (kintamasis.length == 0) {
+    if (kintamasis.length == 0 ) {
         return `Pateiktas sąrašas negali būti tuščias.`
     } else {
         max = kintamasis[0];
         for (let i = 0; i < kintamasis.length; i++) {
-            if (typeof kintamasis[i] !== 'number') {
+            if (typeof kintamasis[i] !== 'number' || !isFinite(kintamasis[i])) {
                 max = `Pateikta netinkamo tipo reikšmė.`;
             } 
             else if (kintamasis[i] > max) {
@@ -476,7 +476,7 @@ function didziausiasSkaiciusSarase(kintamasis) {
     return max;
 }
 
-let A1 = [-1, -2, -3, 9, -5, -6, -7, -8];
+let A1 = [-1, -2, -3, 9, NaN, -6, -7, -8];
 console.log(`rezultatas: `,(didziausiasSkaiciusSarase(A1)));
 
 console.log('--------------------------------------------');
