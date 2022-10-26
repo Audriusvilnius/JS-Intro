@@ -343,7 +343,7 @@ function beLiekanos(daliklis, start, ends) {
     let count = 0;
     let sum = 0;
     let skaicius = start;
-    for (i = start; i <= ends; i++) {
+    for (let i = start; i <= ends; i++) {
 
         //console.log(skaicius);
         if (skaicius % daliklis == 0) {
@@ -361,9 +361,9 @@ const Pradzia = [0, 8, -18];
 const Pabaiga = [11, 31, 18];
 
 
-for (y = 0; y < dalikliai.length; y++) {
-    for (z = 0; z < Pradzia.length; z++)
-        for (i = 0; i < dalikliai.length; i++) {
+for (let y = 0; y < dalikliai.length; y++) {
+    for (let z = 0; z < Pradzia.length; z++)
+        for (let i = 0; i < dalikliai.length; i++) {
             console.log(beLiekanos(dalikliai[y], Pradzia[z], Pabaiga[z]));
         }
 };
@@ -399,7 +399,7 @@ function skaitmenuKiekisSkaiciuje(number) {
         return `Pateikta netinkamo tipo reikšmė.`;
     } else {
         number = Math.abs(number).toString();
-        for (i = 0; i < number.length; i++) {
+        for (let i = 0; i < number.length; i++) {
             //console.log(number[i]);
             if (number[i] !== `.`) {
                 count++;
@@ -451,7 +451,7 @@ function didziausiasSkaiciusSarase(kintamasis) {
         return `Pateiktas sąrašas negali būti tuščias.`
     } else {
         max = kintamasis[0];
-        for (i = 0; i < kintamasis.length; i++) {
+        for (let i = 0; i < kintamasis.length; i++) {
             if (typeof kintamasis[i] !== 'number') {
                 max = `Pateikta netinkamo tipo reikšmė.`;
             } 

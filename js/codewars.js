@@ -102,3 +102,35 @@ function getSum( a,b )
 console.log(getSum(0,-1),-1);
 console.log(getSum(0,1),1);
 console.log(getSum(340,117),51067);
+
+
+function solution(str){
+   let newarr=[];
+   
+    var arr = [...str];
+    let z = arr.length;
+    
+
+    if (str.length%2 != 0){z = Math.ceil((str.length)/2);};
+    for(let i=0; i<z; i++){
+        newarr[i]=arr[i]+arr[i+1];
+        for(let y=1; i<z; y++){
+            
+        }
+        
+
+       
+        //console.log(z);
+    //    console.log(newarr[i]);
+
+    }
+      
+    
+
+    console.log(newarr);
+   //return str
+}
+
+console.log(solution("abcdef"), ["ab", "cd", "ef"]);
+console.log(solution("abcdefg"), ["ab", "cd", "ef", "g_"]);
+console.log(solution(""), []);
