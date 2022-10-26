@@ -90,47 +90,119 @@ Examples (a, b) --> output (explanation)
 (-1, 0) --> -1 (-1 + 0 = -1)
 (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)*/
 
-function getSum( a,b )
-{   var sum =0;
-    if(a === b) sum = a;
+// function getSum( a,b )
+// {   var sum =0;
+//     if(a === b) sum = a;
 
- 
-   return a + b;
+
+//    return a + b;
+// }
+
+
+// console.log(getSum(0,-1),-1);
+// console.log(getSum(0,1),1);
+// console.log(getSum(340,117),51067);
+
+
+// function solution(str){
+//    let newarr=[];
+
+//     var arr = [...str];
+//     let z = arr.length;
+
+
+//     if (str.length%2 != 0){z = Math.ceil((str.length)/2);};
+//     for(let i=0; i<z; i++){
+//         newarr[i]=arr[i]+arr[i+1];
+//         for(let y=1; i<z; y++){
+
+//         }
+
+
+
+//         //console.log(z);
+//     //    console.log(newarr[i]);
+
+//     }
+
+
+
+//     console.log(newarr);
+//    //return str
+// }
+
+// console.log(solution("abcdef"), ["ab", "cd", "ef"]);
+// console.log(solution("abcdefg"), ["ab", "cd", "ef", "g_"]);
+// console.log(solution(""), []);
+
+
+
+console.log('-----------------------------------------------');
+// str = str.replaceAll('a', '');
+// str = str.replaceAll('A', '');
+// str = str.replaceAll('e', '');
+// str = str.replaceAll('E', '');
+// str = str.replaceAll('i', '');
+// str = str.replaceAll('I', '');
+// str = str.replaceAll('u', '');
+// str = str.replaceAll('U', '');
+// str = str.replaceAll('o', '');
+// str = str.replaceAll('O', '');
+
+function disemvowel(str) {
+    let text;
+    str = str.replace('a', '');
+    str = str.replace('A', '');
+    str = str.replace('e', '');
+    str = str.replace('E', '');
+    str = str.replace('i', '');
+    str = str.replace('I', '');
+    str = str.replace('u', '');
+    str = str.replace('U', '');
+    str = str.replace('o', '');
+    str = str.replace('O', '');
+
+    return str;
 }
 
 
-console.log(getSum(0,-1),-1);
-console.log(getSum(0,1),1);
-console.log(getSum(340,117),51067);
+
+console.log(disemvowel("This website is for losers LOL!"), "Ths wbst s fr lsrs LL!");
+console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"), "N ffns bt,\nYr wrtng s mng th wrst 'v vr rd");
+console.log(disemvowel("What are you, a communist?"), "Wht r y,  cmmnst?");
 
 
-function solution(str){
-   let newarr=[];
-   
-    var arr = [...str];
-    let z = arr.length;
-    
+/*
+function descendingOrder(n){
+  return parseInt(String(n).split('').sort().reverse().join(''))
+}
+*/
 
-    if (str.length%2 != 0){z = Math.ceil((str.length)/2);};
-    for(let i=0; i<z; i++){
-        newarr[i]=arr[i]+arr[i+1];
-        for(let y=1; i<z; y++){
-            
-        }
-        
+console.log('-----------------------------------------------');
 
-       
-        //console.log(z);
-    //    console.log(newarr[i]);
-
-    }
-      
-    
-
-    console.log(newarr);
-   //return str
+function descendingOrder(n) {
+    n = n.toString();
+    n = n.split('');
+    let temp;
+    let revN = '';
+    g = 0;
+    for (let i = 0; i < n.length; i++) {
+        for (let y = g++; y < n.length; y++) {
+            if (n[y] > n[i]) {
+                temp = n[i];
+                n[i] = n[y];
+                n[y] = temp;
+            };
+        };
+    } for (let i = 0; i < n.length; i++) 
+        revN += n[i].toString();
+        revN = parseInt(revN);
+    return revN;
 }
 
-console.log(solution("abcdef"), ["ab", "cd", "ef"]);
-console.log(solution("abcdefg"), ["ab", "cd", "ef", "g_"]);
-console.log(solution(""), []);
+console.log(descendingOrder(0), 0);
+console.log(descendingOrder(1), 1);
+console.log(descendingOrder(111), 111);
+console.log(descendingOrder(15), 51);
+console.log(descendingOrder(1021), 2110);
+console.log(descendingOrder(123456789), 987654321);
