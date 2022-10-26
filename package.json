@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "numsize": "nodemon ./js/13-numSize.js",
+    "numsize": "nodemon ./js/13-numsize.js",
     "sumintervale": "nodemon ./js/12-sumintervale.js",
-    "strinmetod": "nodemon ./js/14-string-metod.js",
+    "stringmetod": "nodemon ./js/14-stringmetod.js",
     "ternary": "nodemon ./js/11-ternary.js",
     "reverse": "nodemon ./js/10-reverse.js",
     "for": "nodemon ./js/08-for.js",
