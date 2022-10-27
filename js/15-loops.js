@@ -114,7 +114,7 @@ const locationAfter = locationBefore.map(function(location){
      }
  }
  console.log(luckyPeople);
- console.log(older70);
+ console.log('objektas :',older70);
  
  // FILTER - padaryti masyvo kopija su atfiltruotomis reiksmemis per objekta 
  const older70filter = luckyPeople
