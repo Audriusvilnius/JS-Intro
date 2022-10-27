@@ -282,7 +282,7 @@ function highAndLow(numbers){
    console.log(([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]),21);
    console.log(number([[0,0]]),0);
 
-
+   console.log('-----------------------------------------------');
 
    /*
 
@@ -339,3 +339,172 @@ function highAndLow(numbers){
     console.log(validatePIN("098765"),true, "Wrong output for '098765'");
     console.log(validatePIN("000000"),true, "Wrong output for '000000'");
     console.log(validatePIN("123456"),true, "Wrong output for '123456'");
+   
+   
+    console.log('-----------------------------------------------');
+    /*
+
+    https://www.codewars.com/kata/578aa45ee9fd15ff4600090d/train/javascript
+
+    You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+
+Examples
+
+[7, 1]  =>  [1, 7]
+[5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+    */
+
+
+function sortArray(array) {
+    console.log(array);
+
+    g = 0;
+    for (let i = 0; i < array.length; i++) {
+        for (let y = g++; y < array.length; y++) {
+            if (array[i] > array[y] && array[i] ) {
+                temp = array[y];
+                array[y] = array[i];
+                array[i] = temp;
+            }
+        };
+    }
+    
+    return array;
+  }
+
+  console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
+  console.log(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0]);
+  console.log(sortArray([]),[]);
+
+
+
+  console.log('-----------------------------------------------');
+/*
+Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces.
+
+
+https://www.codewars.com/kata/54ff3102c1bad923760001f3/train/javascript
+
+function getCount(str) {
+  return (str.match(/[aeiou]/ig)||[]).length;
+}
+*/
+function getCount(str) {
+    let count = 0;
+    for (i = 0 ; i<str.length; i++){
+        if(str[i] == 'a' ||str[i] == 'e' ||str[i] == 'i' ||str[i] == 'o' ||str[i] == 'u')count++;
+    }
+    return count;
+  }
+
+
+
+console.log(getCount("abracadabra"), 5);
+
+
+console.log('-----------------------------------------------');
+/*
+https://www.codewars.com/kata/558fc85d8fd1938afb000014/train/javascript
+
+
+Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+
+For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+
+[10, 343445353, 3453445, 3453545353453] should return 3453455.
+
+
+function sumTwoSmallestNumbers(numbers){  
+  numbers = numbers.sort(function(a, b){return a - b; });
+  return numbers[0] + numbers[1];
+};
+
+*/
+
+function sumTwoSmallestNumbers(numbers) {  
+    //Code here
+    g = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        for (let y = g++; y < numbers.length; y++) {
+            if (numbers[i] > numbers[y]) {
+                temp = numbers[y];
+                numbers[y] = numbers[i];
+                numbers[i] = temp;
+            }
+        };
+    }return numbers[0]+numbers[1];
+
+}
+
+console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]), 13 , "Sum should be 13");
+console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]), 6 , "Sum should be 6");
+console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]), 10 , "Sum should be 10");
+console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24 , "Sum should be 24");
+console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16 , "Sum should be 16");
+
+
+console.log('-----------------------------------------------');
+
+/*
+
+https://www.codewars.com/kata/5262119038c0985a5b00029f/train/javascript
+
+Define a function that takes an integer argument and returns a logical value true or false depending on if the integer is a prime.
+
+Per Wikipedia, a prime number ( or a prime ) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+Requirements
+
+You can assume you will be given an integer input.
+You can not assume that the integer will be only positive. You may be given negative numbers as well ( or 0 ).
+NOTE on performance: There are no fancy optimizations required, but still the most trivial solutions might time out. Numbers go up to 2^31 ( or similar, depending on language ). Looping all the way up to n, or n/2, will be too slow.
+
+Example
+
+// is_prime(1)  false 
+// is_prime(2)  true  
+// is_prime(-1) false 
+
+
+function isPrime(num) {
+  if (num < 2) return false;
+  const limit = Math.sqrt(num);
+  for (let i = 2; i <= limit; ++i) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+*/
+
+function isPrime(num) {
+    //TODO
+    let s=0;
+    for (let i=2;i<=Math.sqrt(num);i++){
+        if (num%i==0){s=1;s+=s;}}
+        if (s!==0||num<2)return false;
+          else if (s==0)return true;
+     
+
+  }
+
+  console.log(isPrime(0),  false, "0 is not prime");
+  console.log(isPrime(9),  true, "9 is not prime");
+  console.log(isPrime(1),  false, "1 is not prime");
+  console.log(isPrime(2),  true, "2 is prime");
+  console.log(isPrime(73), true, "73 is prime");
+  console.log(isPrime(75), false, "75 is not prime");
+  console.log(isPrime(-1), false, "-1 is not prime");
+
+
+
+  console.log('-----------------------------------------------');
