@@ -549,10 +549,33 @@ Examples
 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 
-
+  //parseInt(String(n).split('').sort().reverse().join(''))
 
 */
 
+function digitalRoot(n) {
+    // ...
+    const strN = [];
+    const strN1 = [];
+    let str = String(n).split('');
+    for(let i=0 ; i < str.length; i++){
+        strN.push(parseFloat(str[i]));
+            n = strN.reduce(function(str,n){
+                return str+n;
+            });}
+            if(n > 9){ 
+                str = String(n).split('');
+                for(let i=0 ; i < str.length; i++){
+                    strN1.push(parseFloat(str[i]));
+                        n = strN1.reduce(function(str,n){
+                            return str+n;
+                        });}return n
+            
+            }else return n;
+  }
 
-console.log( digitalRoot(16), 7 )
-console.log( digitalRoot(456), 6 )
+
+console.log(digitalRoot(123), 6 );
+console.log(digitalRoot(10), 1 );
+console.log(digitalRoot(11), 2 );
+console.log(digitalRoot(456), 6 );
