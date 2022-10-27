@@ -206,3 +206,124 @@ console.log(descendingOrder(111), 111);
 console.log(descendingOrder(15), 51);
 console.log(descendingOrder(1021), 2110);
 console.log(descendingOrder(123456789), 987654321);
+
+console.log('-----------------------------------------------');
+
+
+/*
+In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+Examples
+
+highAndLow("1 2 3 4 5");  // return "5 1"
+highAndLow("1 2 -3 4 5"); // return "5 -3"
+highAndLow("1 9 3 4 -5"); // return "9 -5"
+Notes
+
+All numbers are valid Int32, no need to validate them.
+There will always be at least one number in the input string.
+Output string must be two numbers separated by a single space, and highest number is first.
+
+
+
+function highAndLow(numbers){
+  numbers = numbers.split(' ').map(Number);
+  return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
+}
+
+*/
+
+console.log('-----------------------------------------------');
+
+function highAndLow(numbers){
+    //parseInt(String(n).split('').sort().reverse().join(''))
+    //let max=[];
+    //let min=[];
+        let join='';
+        numbers = (numbers.split(' '));
+        let max=numbers[0];
+        for (i = 0; i< numbers.length; i++){
+            numbers[i] = parseInt(numbers[i]);
+            if ( numbers[i] > max){
+                max = numbers[i];
+            }
+        } 
+        console.log(max);
+        let min=numbers[0];
+        for (i = 0; i< numbers.length; i++){
+            if ( numbers[i] < min){
+                min = numbers[i];
+            }
+        } 
+        console.log(min);
+        join =max+' '+min;
+
+     console.log(join);
+
+  }
+
+
+  console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
+  console.log(highAndLow("1 2 3"), "3 1");
+
+  console.log('-----------------------------------------------');
+
+  var number = function(busStops){
+    // Good Luck!
+
+
+  }
+
+
+
+
+   console.log(([[10,0],[3,5],[5,8]]),5);
+   console.log(([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]),17);
+   console.log(([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]),21);
+   console.log(number([[0,0]]),0);
+
+
+
+   /*
+
+   ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+   If the function is passed a valid PIN string, return true, else return false.
+
+
+  //parseInt(String(n).split('').sort().reverse().join(''))
+    123
+12345
+1234567
+1234567890
+1234x
+123456x
+12.0
+
+   */
+
+
+   function validatePIN (pin) {
+    //return true or false
+       console.log(pin);
+        if (pin == '0000' || pin == '000000') { return true; }
+        pin = parseInt(pin);
+           if (pin.length == 4 && pin % 1 == 0 && pin > 0) {return true;}
+           if (pin.length == 6 && pin % 1 == 0 && pin > 0) {return true;}
+           
+    return false
+    }
+   
+  
+
+ 
+
+    // conslole.log(validatePIN(0000000));
+    console.log(validatePIN("123456"),false, "Wrong output for '12'");
+    console.log(validatePIN("12.0"),false, "Wrong output for '123'");
+    console.log(validatePIN("12345"),false, "Wrong output for '12345'");
+    console.log(validatePIN("1234567"),false, "Wrong output for '1234567'");
+    console.log(validatePIN("-1234"),false, "Wrong output for '-1234'");
+    console.log(validatePIN("1.234"),false, "Wrong output for '1.234'");
+    console.log(validatePIN("-1.234"),false, "Wrong output for '-1.234'");
+    console.log(validatePIN("000000"),false, "Wrong output for '00000000'");
