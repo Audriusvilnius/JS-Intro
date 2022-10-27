@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "arrow": "nodemon ./js/16-arrow.js",
     "loops": "nodemon ./js/15-loops.js",
     "numsize": "nodemon ./js/13-numsize.js",
     "sumintervale": "nodemon ./js/12-sumintervale.js",

@@ -158,7 +158,65 @@ keyboardNumber.sort(function (a, b) {
         return -1;
     }
 });
-console.log(keyboardNumber);
+console.log('Sort number',keyboardNumber);
 
+
+// Sort simboliam
 keyboardNumber.sort();
-console.log(keyboardNumber);
+console.log('Sort simboliam',keyboardNumber);
+
+/// Reduc - supaprastinti, vaiksmai atliekiami nuo pirmo elemmento 
+
+const marks3 = [5,7,8,9,0,0,10];
+
+const sumReduces = marks3.reduce(function(total, n){
+    return total+n
+});
+console.log('Reduce sum:', sumReduces);
+
+
+const marks4 = [1,2,3,4,5];
+const produReduce = marks4.reduce(function (total, n){
+    return total*n;
+
+});
+console.log('Reduce *:', produReduce);
+
+
+const marks2 = [5,7,8,9,0,0,10];
+
+const minusReduces1 = marks2.reduce(function(total, n){
+    return total-n
+});
+console.log('Reduce minus:', minusReduces1);
+
+
+const marks5 = [5,7,8,9,0,0,10];
+
+const minusReduces2 = marks5.reduce(function(total, n){
+    return total-n
+}, 50); // antras parametras nuo kurio atliekamos aoperacijos
+console.log('Reduce minus nuo uzdoto parametro 50: ', minusReduces2);
+
+
+//DEMO
+
+const list =[0,3,2,1,6,5,4,9,8,7];
+
+const ats = list
+    .map(function(n){
+        return n*2+1;
+    })
+    .filter(function(n){
+        return n%5===0 || n%3 ===0;
+    })
+     .sort(function(a,b){
+        if(a>b){return 1}
+        if(a===b){return 0}
+        return -1;
+     })
+    .reduce(function(total,n){
+        return total + n;
+    }, 0);
+
+    console.log('Keliu funkciju panaudokjimas vienu metu',ats);
