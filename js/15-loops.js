@@ -116,7 +116,7 @@ const locationAfter = locationBefore.map(function(location){
  console.log(luckyPeople);
  console.log(older70);
  
- // FILTER - padaryti masyvo kopija su atfiltruotomis reiksmemis
+ // FILTER - padaryti masyvo kopija su atfiltruotomis reiksmemis per objekta 
  const older70filter = luckyPeople
      .filter(function (person) {
          return person.age > 70;
@@ -142,7 +142,7 @@ const locationAfter = locationBefore.map(function(location){
 });
 console.log('Others:', filterBefore, filterOther);
 
-console.clear();
+
 
 // SORT - modifikuoja masyva isrikiuojant jo duomenis
 
