@@ -306,18 +306,21 @@ function highAndLow(numbers){
    function validatePIN (pin) {
     //return true or false
        console.log(pin);
+       let position = pin.search(".");
+       console.log(position);
+        if( position == -1) {return false;}
         if (pin == '0000' || pin == '000000') { return true; }
-        pin = parseInt(pin);
-           if (pin.length == 4 && pin % 1 == 0 && pin > 0) {return true;}
-           if (pin.length == 6 && pin % 1 == 0 && pin > 0) {return true;}
+           if (pin.length == 4){
+            pin = parseInt(pin);
+                if ( pin % 1 == 0 && pin > 0) {return true;}};
+            if (pin.length == 6){
+            pin = parseInt(pin);
+                if ( pin % 1 == 0 && pin > 0) {return true;}
+            }
+           
            
     return false
     }
-   
-  
-
- 
-
     // conslole.log(validatePIN(0000000));
     console.log(validatePIN("123456"),false, "Wrong output for '12'");
     console.log(validatePIN("12.0"),false, "Wrong output for '123'");
@@ -326,4 +329,13 @@ function highAndLow(numbers){
     console.log(validatePIN("-1234"),false, "Wrong output for '-1234'");
     console.log(validatePIN("1.234"),false, "Wrong output for '1.234'");
     console.log(validatePIN("-1.234"),false, "Wrong output for '-1.234'");
-    console.log(validatePIN("000000"),false, "Wrong output for '00000000'");
+    console.log(validatePIN("000000"),false, "Wrong output for '00000000'");    
+    console.log(validatePIN("a234"),false, "Wrong output for 'a234'");
+    console.log(validatePIN(".234"),false, "Wrong output for '.234'");
+    console.log(validatePIN("1234"),true, "Wrong output for '1234'");
+    console.log(validatePIN("0000"),true, "Wrong output for '0000'");
+    console.log(validatePIN("1111"),true, "Wrong output for '1111'");
+    console.log(validatePIN("123456"),true, "Wrong output for '123456'");
+    console.log(validatePIN("098765"),true, "Wrong output for '098765'");
+    console.log(validatePIN("000000"),true, "Wrong output for '000000'");
+    console.log(validatePIN("123456"),true, "Wrong output for '123456'");

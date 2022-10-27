@@ -51,3 +51,114 @@ marks.forEach(function (mark, index, list) {
 });
 const aveForeach = sumForeach / marks.length;
 console.log('Foreach:', aveForeach);
+
+//MAP modifikuoja is sukuria masyva
+
+const priceBefore = [10,2,88,6,8];
+const priceAfter = priceBefore.map(function(price){
+    const precision = 3; // apvalinimas po kablelio
+    const pvm = 1.1815;
+    return +(price*pvm).toFixed(precision);
+    //return Math.round(price*1.21*100)/100;
+    // function galima aprasyt ir iskelti kaip funkcija
+});
+console.log("Map:", priceBefore, priceAfter);
+
+//FILTER padaro masyvo kopija su atfiltruotomis reiksmemis modifikuoja
+
+const locationBefore = ['Vilnius', 'kaunas', 'Klaipeda', 'Panevezys' ];
+const locationAfter = locationBefore.map(function(location){
+    return location[0].toUpperCase() +'.';
+
+   
+})
+ console.log('Map:', locationBefore,locationAfter);
+
+ // Filter - parodyt filtra su atfiltrotom reiksmemis
+ const filterBefore = [ 1, false, {}, 'b', [], 'Z'];
+ const filterNumber = filterBefore.filter(function(item){
+    // if (typeof item === 'number'){
+    //     return true; ;
+    // }else return false;
+
+    return typeof item === 'number';
+ })
+
+ console.log ('Number: ', filterBefore, filterNumber);
+ // Filter - parodyt filtra su atfiltrotom reiksmemis
+ const filterBefore1 = [ 1, false, {}, 'b', [], 'Z'];
+ const filterItem1 = filterBefore1.filter(function(item){
+    
+
+    return typeof item !== 'number'
+        && typeof item !== 'string'
+        && typeof item !== 'boolean';
+ })
+
+ console.log ('Number: ', filterBefore1, filterItem1);
+
+ console.clear();
+
+ const luckyPeople = [
+     { name: 'Petras', age: 99 },
+     { name: 'Maryte', age: 87 },
+     { name: 'Jonas', age: 66 },
+     { name: 'Ona', age: 35 },
+ ];
+ const older70 = [];
+ for (const person of luckyPeople) {
+     if (person.age > 70) {
+         older70.push({
+             age: person.age,
+         });
+     }
+ }
+ console.log(luckyPeople);
+ console.log(older70);
+ 
+ // FILTER - padaryti masyvo kopija su atfiltruotomis reiksmemis
+ const older70filter = luckyPeople
+     .filter(function (person) {
+         return person.age > 70;
+     });
+ console.log(older70filter);
+ 
+ const older70filterAge = luckyPeople
+     .filter(function (person) {
+         return person.age > 70;
+     })
+     .map(function (person) {
+         return {
+             age: person.age
+         }
+     });
+ console.log(older70filterAge);
+
+ 
+ const filterOther = filterBefore.filter(function (item) {
+    return typeof item !== 'number'
+        && typeof item !== 'string'
+        && typeof item !== 'boolean';
+});
+console.log('Others:', filterBefore, filterOther);
+
+console.clear();
+
+// SORT - modifikuoja masyva isrikiuojant jo duomenis
+
+const keyboardNumber = [7, 8, 9, 4, 4, 10, 5, 11, 77, 114, 6, 1, 1, 2, 3, 0];
+console.log(keyboardNumber);
+
+keyboardNumber.sort(function (a, b) {
+    if (a > b) {
+        return 1;
+    } else if (a === b) {
+        return 0;
+    } else {
+        return -1;
+    }
+});
+console.log(keyboardNumber);
+
+keyboardNumber.sort();
+console.log(keyboardNumber);
