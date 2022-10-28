@@ -673,18 +673,15 @@ function expandedForm(num) {
                 temp = num - Math.floor(num / count) * count;
                 num = num - temp;
                 strTemp.push(temp);
-                if (num > count){
-                count = count * 10;}
                 } 
                 else {
-                    count = count * 10;
                     temp = num - Math.floor(num / count) * count;
                     num = num - temp;
-                    strTemp.push(temp);
+                    strTemp.push(num);
             }
         }
     }
-    console.log(strTemp);
+            console.log(strTemp);
             console.log(temp);
             console.log(num);
 }
