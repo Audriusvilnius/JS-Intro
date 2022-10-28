@@ -194,9 +194,9 @@ function descendingOrder(n) {
                 n[y] = temp;
             };
         };
-    } for (let i = 0; i < n.length; i++) 
+    } for (let i = 0; i < n.length; i++)
         revN += n[i].toString();
-        revN = parseInt(revN);
+    revN = parseInt(revN);
     return revN;
 }
 
@@ -235,64 +235,64 @@ function highAndLow(numbers){
 
 console.log('-----------------------------------------------');
 
-function highAndLow(numbers){
+function highAndLow(numbers) {
     //parseInt(String(n).split('').sort().reverse().join(''))
     //let max=[];
     //let min=[];
-        let join='';
-        numbers = (numbers.split(' '));
-        let max=numbers[0];
-        for (i = 0; i< numbers.length; i++){
-            numbers[i] = parseInt(numbers[i]);
-            if ( numbers[i] > max){
-                max = numbers[i];
-            }
-        } 
-        console.log(max);
-        let min=numbers[0];
-        for (i = 0; i< numbers.length; i++){
-            if ( numbers[i] < min){
-                min = numbers[i];
-            }
-        } 
-        console.log(min);
-        join =max+' '+min;
+    let join = '';
+    numbers = (numbers.split(' '));
+    let max = numbers[0];
+    for (i = 0; i < numbers.length; i++) {
+        numbers[i] = parseInt(numbers[i]);
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+    }
+    console.log(max);
+    let min = numbers[0];
+    for (i = 0; i < numbers.length; i++) {
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+    }
+    console.log(min);
+    join = max + ' ' + min;
 
-     console.log(join);
+    console.log(join);
 
-  }
+}
 
 
-  console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
-  console.log(highAndLow("1 2 3"), "3 1");
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
+console.log(highAndLow("1 2 3"), "3 1");
 
-  console.log('-----------------------------------------------');
+console.log('-----------------------------------------------');
 
-  var number = function(busStops){
+var number = function (busStops) {
     // Good Luck!
 
 
-  }
+}
 
 
 
 
-   console.log(([[10,0],[3,5],[5,8]]),5);
-   console.log(([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]),17);
-   console.log(([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]),21);
-   console.log(number([[0,0]]),0);
+console.log(([[10, 0], [3, 5], [5, 8]]), 5);
+console.log(([[3, 0], [9, 1], [4, 10], [12, 2], [6, 1], [7, 10]]), 17);
+console.log(([[3, 0], [9, 1], [4, 8], [12, 2], [6, 1], [7, 8]]), 21);
+console.log(number([[0, 0]]), 0);
 
-   console.log('-----------------------------------------------');
+console.log('-----------------------------------------------');
 
-   /*
+/*
 
-   ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
 
-   If the function is passed a valid PIN string, return true, else return false.
+If the function is passed a valid PIN string, return true, else return false.
 
 
-  //parseInt(String(n).split('').sort().reverse().join(''))
-    123
+//parseInt(String(n).split('').sort().reverse().join(''))
+ 123
 12345
 1234567
 1234567890
@@ -300,53 +300,54 @@ function highAndLow(numbers){
 123456x
 12.0
 
-   */
+*/
 
 
-   function validatePIN (pin) {
+function validatePIN(pin) {
     //return true or false
-       console.log(pin);
-       let position = pin.search(".");
-       console.log(position);
-        if( position == -1) {return false;}
-        if (pin == '0000' || pin == '000000') { return true; }
-           if (pin.length == 4){
-            pin = parseInt(pin);
-                if ( pin % 1 == 0 && pin > 0) {return true;}};
-            if (pin.length == 6){
-            pin = parseInt(pin);
-                if ( pin % 1 == 0 && pin > 0) {return true;}
-            }
-           
-           
-    return false
+    console.log(pin);
+    let position = pin.search(".");
+    console.log(position);
+    if (position == -1) { return false; }
+    if (pin == '0000' || pin == '000000') { return true; }
+    if (pin.length == 4) {
+        pin = parseInt(pin);
+        if (pin % 1 == 0 && pin > 0) { return true; }
+    };
+    if (pin.length == 6) {
+        pin = parseInt(pin);
+        if (pin % 1 == 0 && pin > 0) { return true; }
     }
-    // conslole.log(validatePIN(0000000));
-    console.log(validatePIN("123456"),false, "Wrong output for '12'");
-    console.log(validatePIN("12.0"),false, "Wrong output for '123'");
-    console.log(validatePIN("12345"),false, "Wrong output for '12345'");
-    console.log(validatePIN("1234567"),false, "Wrong output for '1234567'");
-    console.log(validatePIN("-1234"),false, "Wrong output for '-1234'");
-    console.log(validatePIN("1.234"),false, "Wrong output for '1.234'");
-    console.log(validatePIN("-1.234"),false, "Wrong output for '-1.234'");
-    console.log(validatePIN("000000"),false, "Wrong output for '00000000'");    
-    console.log(validatePIN("a234"),false, "Wrong output for 'a234'");
-    console.log(validatePIN(".234"),false, "Wrong output for '.234'");
-    console.log(validatePIN("1234"),true, "Wrong output for '1234'");
-    console.log(validatePIN("0000"),true, "Wrong output for '0000'");
-    console.log(validatePIN("1111"),true, "Wrong output for '1111'");
-    console.log(validatePIN("123456"),true, "Wrong output for '123456'");
-    console.log(validatePIN("098765"),true, "Wrong output for '098765'");
-    console.log(validatePIN("000000"),true, "Wrong output for '000000'");
-    console.log(validatePIN("123456"),true, "Wrong output for '123456'");
-   
-   
-    console.log('-----------------------------------------------');
-    /*
 
-    https://www.codewars.com/kata/578aa45ee9fd15ff4600090d/train/javascript
 
-    You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+    return false
+}
+// conslole.log(validatePIN(0000000));
+console.log(validatePIN("123456"), false, "Wrong output for '12'");
+console.log(validatePIN("12.0"), false, "Wrong output for '123'");
+console.log(validatePIN("12345"), false, "Wrong output for '12345'");
+console.log(validatePIN("1234567"), false, "Wrong output for '1234567'");
+console.log(validatePIN("-1234"), false, "Wrong output for '-1234'");
+console.log(validatePIN("1.234"), false, "Wrong output for '1.234'");
+console.log(validatePIN("-1.234"), false, "Wrong output for '-1.234'");
+console.log(validatePIN("000000"), false, "Wrong output for '00000000'");
+console.log(validatePIN("a234"), false, "Wrong output for 'a234'");
+console.log(validatePIN(".234"), false, "Wrong output for '.234'");
+console.log(validatePIN("1234"), true, "Wrong output for '1234'");
+console.log(validatePIN("0000"), true, "Wrong output for '0000'");
+console.log(validatePIN("1111"), true, "Wrong output for '1111'");
+console.log(validatePIN("123456"), true, "Wrong output for '123456'");
+console.log(validatePIN("098765"), true, "Wrong output for '098765'");
+console.log(validatePIN("000000"), true, "Wrong output for '000000'");
+console.log(validatePIN("123456"), true, "Wrong output for '123456'");
+
+
+console.log('-----------------------------------------------');
+/*
+
+https://www.codewars.com/kata/578aa45ee9fd15ff4600090d/train/javascript
+
+You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
 
 
 Examples
@@ -355,7 +356,7 @@ Examples
 [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
 [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
 
-    */
+*/
 
 
 function sortArray(array) {
@@ -364,24 +365,24 @@ function sortArray(array) {
     g = 0;
     for (let i = 0; i < array.length; i++) {
         for (let y = g++; y < array.length; y++) {
-            if (array[i] > array[y] && array[i] ) {
+            if (array[i] > array[y] && array[i]) {
                 temp = array[y];
                 array[y] = array[i];
                 array[i] = temp;
             }
         };
     }
-    
+
     return array;
-  }
+}
 
-  console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
-  console.log(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0]);
-  console.log(sortArray([]),[]);
+console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
+console.log(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0]);
+console.log(sortArray([]), []);
 
 
 
-  console.log('-----------------------------------------------');
+console.log('-----------------------------------------------');
 /*
 Return the number (count) of vowels in the given string.
 
@@ -398,11 +399,11 @@ function getCount(str) {
 */
 function getCount(str) {
     let count = 0;
-    for (i = 0 ; i<str.length; i++){
-        if(str[i] == 'a' ||str[i] == 'e' ||str[i] == 'i' ||str[i] == 'o' ||str[i] == 'u')count++;
+    for (i = 0; i < str.length; i++) {
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') count++;
     }
     return count;
-  }
+}
 
 
 
@@ -428,7 +429,7 @@ function sumTwoSmallestNumbers(numbers){
 
 */
 
-function sumTwoSmallestNumbers(numbers) {  
+function sumTwoSmallestNumbers(numbers) {
     //Code here
     g = 0;
     for (let i = 0; i < numbers.length; i++) {
@@ -439,15 +440,15 @@ function sumTwoSmallestNumbers(numbers) {
                 numbers[i] = temp;
             }
         };
-    }return numbers[0]+numbers[1];
+    } return numbers[0] + numbers[1];
 
 }
 
-console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]), 13 , "Sum should be 13");
-console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]), 6 , "Sum should be 6");
-console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]), 10 , "Sum should be 10");
-console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24 , "Sum should be 24");
-console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16 , "Sum should be 16");
+console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]), 13, "Sum should be 13");
+console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]), 6, "Sum should be 6");
+console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]), 10, "Sum should be 10");
+console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24, "Sum should be 24");
+console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16, "Sum should be 16");
 
 
 console.log('-----------------------------------------------');
@@ -488,26 +489,27 @@ function isPrime(num) {
 
 function isPrime(num) {
     //TODO
-    let s=0;
-    for (let i=2;i<=Math.sqrt(num);i++){
-        if (num%i==0){s=1;s+=s;}}
-        if (s!==0||num<2)return false;
-          else if (s==0)return true;
-     
-
-  }
-
-  console.log(isPrime(0),  false, "0 is not prime");
-  console.log(isPrime(9),  true, "9 is not prime");
-  console.log(isPrime(1),  false, "1 is not prime");
-  console.log(isPrime(2),  true, "2 is prime");
-  console.log(isPrime(73), true, "73 is prime");
-  console.log(isPrime(75), false, "75 is not prime");
-  console.log(isPrime(-1), false, "-1 is not prime");
+    let s = 0;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i == 0) { s = 1; s += s; }
+    }
+    if (s !== 0 || num < 2) return false;
+    else if (s == 0) return true;
 
 
+}
 
-  console.log('-----------------------------------------------');
+console.log(isPrime(0), false, "0 is not prime");
+console.log(isPrime(9), true, "9 is not prime");
+console.log(isPrime(1), false, "1 is not prime");
+console.log(isPrime(2), true, "2 is prime");
+console.log(isPrime(73), true, "73 is prime");
+console.log(isPrime(75), false, "75 is not prime");
+console.log(isPrime(-1), false, "-1 is not prime");
+
+
+
+console.log('-----------------------------------------------');
 
 /*
 https://www.codewars.com/kata/52efefcbcdf57161d4000091/train/javascript
@@ -536,20 +538,20 @@ What if the string is empty? Then the result should be empty object literal, {}.
    */
 
 
-  /*
+/*
 https://www.codewars.com/kata/541c8630095125aba6000c00/train/javascript
-  Digital root is the recursive sum of all the digits in a number.
+Digital root is the recursive sum of all the digits in a number.
 
 Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
 
 Examples
 
-    16  -->  1 + 6 = 7
-   942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+  16  -->  1 + 6 = 7
+ 942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 
-  //parseInt(String(n).split('').sort().reverse().join(''))
+//parseInt(String(n).split('').sort().reverse().join(''))
 
 */
 
@@ -558,24 +560,138 @@ function digitalRoot(n) {
     const strN = [];
     const strN1 = [];
     let str = String(n).split('');
-    for(let i=0 ; i < str.length; i++){
+    for (let i = 0; i < str.length; i++) {
         strN.push(parseFloat(str[i]));
-            n = strN.reduce(function(str,n){
-                return str+n;
-            });}
-            if(n > 9){ 
-                str = String(n).split('');
-                for(let i=0 ; i < str.length; i++){
-                    strN1.push(parseFloat(str[i]));
-                        n = strN1.reduce(function(str,n){
-                            return str+n;
-                        });}return n
-            
-            }else return n;
-  }
+        n = strN.reduce(function (str, n) {
+            return str + n;
+        });
+    }
+    if (n > 9) {
+        str = String(n).split('');
+        for (let i = 0; i < str.length; i++) {
+            strN1.push(parseFloat(str[i]));
+            n = strN1.reduce(function (str, n) {
+                return str + n;
+            });
+        } return n
+
+    } else return n;
+}
 
 
-console.log(digitalRoot(123), 6 );
-console.log(digitalRoot(10), 1 );
-console.log(digitalRoot(11), 2 );
-console.log(digitalRoot(456), 6 );
+console.log(digitalRoot(123), 6);
+console.log(digitalRoot(10), 1);
+console.log(digitalRoot(11), 2);
+console.log(digitalRoot(456), 6);
+
+console.log('-----------------------------------------------');
+
+
+/*
+https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/train/javascript
+
+
+his time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+seven(times(five())); // must return 35
+four(plus(nine())); // must return 13
+eight(minus(three())); // must return 5
+six(dividedBy(two())); // must return 3
+Requirements:
+
+There must be a function for each number from 0 ("zero") to 9 ("nine")
+There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy
+Each calculation consist of exactly one operation and two numbers
+The most outer function represents the left operand, the most inner function represents the right operand
+Division should be integer division. For example, this should return 2, not 2.666666...:
+
+
+*/
+
+
+function zero() { }
+function one() { }
+function two() { }
+function three() { }
+function four() { }
+function five() { }
+function six() { }
+function seven() { }
+function eight() { }
+function nine() { }
+
+function plus() { }
+function minus() { }
+function times() { }
+function dividedBy() { }
+
+
+
+console.log(seven(times(five())), 35);
+console.log(four(plus(nine())), 13);
+console.log(eight(minus(three())), 5);
+console.log(six(dividedBy(two())), 3);
+
+
+console.log('-----------------------------------------------');
+
+
+/*
+
+
+https://www.codewars.com/kata/5842df8ccbd22792a4000245/train/javascript
+
+Write Number in Expanded Form
+
+You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+expandedForm(12); // Should return '10 + 2'
+expandedForm(42); // Should return '40 + 2'
+expandedForm(70304); // Should return '70000 + 300 + 4'
+NOTE: All numbers will be whole numbers greater than 0.
+
+If you liked this kata, check out part 2!!
+
+
+
+*/
+console.clear();
+
+function expandedForm(num) {
+    // Your code here
+    let temp = 0;
+    const strTemp = [];
+    let count = 10;
+    let str = String(num);
+    if (str.length == 1) {
+        num = '' + num;
+        return num;
+    }
+    else {
+        for (let i = 1; i < str.length; i++) {
+            if (num % 10 !== 0) {
+                temp = num - Math.floor(num / count) * count;
+                num = num - temp;
+                strTemp.push(temp);
+                if (num > count){
+                count = count * 10;}
+                } 
+                else {
+                    count = count * 10;
+                    temp = num - Math.floor(num / count) * count;
+                    num = num - temp;
+                    strTemp.push(temp);
+            }
+        }
+    }
+    console.log(strTemp);
+            console.log(temp);
+            console.log(num);
+}
+
+        console.log(expandedForm(11256), '101256');
+        console.log(expandedForm(12), '10 + 2');
+        console.log(expandedForm(121), '100 + 20 + 1');
+        console.log(expandedForm(1210), '1000 + 200 + 10');
+        console.log(expandedForm(42), '40 + 2');
+        console.log(expandedForm(70304), '70000 + 300 + 4');
