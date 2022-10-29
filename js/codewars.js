@@ -668,24 +668,57 @@ function expandedForm(num) {
         return num;
     }
     else {
-        for (let i = 1; i < str.length; i++) {
+        for (let i = 1; i <= str.length; i++) {
             if (num % 10 !== 0) {
-                temp = num - Math.floor(num / count) * count;
+                temp = num - Math.floor(num / count) * 10;
                 num = num - temp;
                 strTemp.push(temp);
                 } 
-                else {
+                    else {
+                    count = count*10;
                     temp = num - Math.floor(num / count) * count;
                     num = num - temp;
-                    strTemp.push(num);
+                     if (temp !== 0){
+                        strTemp.push(temp);
+                    }
+                    
             }
         }
     }
-            console.log(strTemp);
-            console.log(temp);
-            console.log(num);
+    
+    const strNum = strTemp.sort(function(a,b){
+                if(a<b){return 1}
+                if(a===b){return 0}
+                return -1;
+        });
+        
+    let strN = strNum.toString();
+    let ats = strN.map(function(s){
+        return +s.split('').join('+');
+    });
+    // for (i = 0 ; i < strN.length ; i++){
+    //     if(strN[i] === ','){ 
+    //         strN[i] == "'+'";
+    //     }
+    // };
+
+
+
+    //const ats = strN.replaceAll(',',' + ');
+
+    console.log(strN);
+    ats = strN.length;
+    console.log(ats);
+
+    //return ats;
+
 }
 
+
+
+        
+
+        console.log(expandedForm(1010256), '101256');
         console.log(expandedForm(11256), '101256');
         console.log(expandedForm(12), '10 + 2');
         console.log(expandedForm(121), '100 + 20 + 1');
