@@ -655,6 +655,8 @@ If you liked this kata, check out part 2!!
 
 
 */
+
+
 console.clear();
 
 function expandedForm(num) {
@@ -673,53 +675,289 @@ function expandedForm(num) {
                 temp = num - Math.floor(num / count) * 10;
                 num = num - temp;
                 strTemp.push(temp);
-                } 
-                    else {
-                    count = count*10;
-                    temp = num - Math.floor(num / count) * count;
-                    num = num - temp;
-                     if (temp !== 0){
-                        strTemp.push(temp);
-                    }
-                    
+            }
+            else {
+                count = count * 10;
+                temp = num - Math.floor(num / count) * count;
+                num = num - temp;
+                if (temp !== 0) {
+                    strTemp.push(temp);
+                }
+
             }
         }
     }
-    
-    const strNum = strTemp.sort(function(a,b){
-                if(a<b){return 1}
-                if(a===b){return 0}
-                return -1;
-        });
-        
-    let strN = strNum.toString();
-    
-    for (i = 0 ; i < strN.length ; i++){
-        if(strN[i] === ','){ 
-            strN[i] == "'+'";
+
+    // const strNum = strTemp.sort(function(a,b){
+    //             if(a<b){return 1}
+    //             if(a===b){return 0}
+    //             return -1;
+    //     });
+
+
+
+    for (i = 0; i < strTemp.length; i++) {
+        if (str[i] === ',') {
+            str[i] == "'+'";
+            let strNew = '' + strTemp[i].toString();
         }
     };
 
 
 
-   // const ats = strN.replaceAll(',',' + ');
+    //const ats = strN.replaceAll(',',' + ');
 
-    console.log(strN);
-    ats = strN.length;
-    console.log(ats);
+    console.log(strTemp);
+    //ats = strN.length;
+    //console.log(ats);
 
     //return ats;
 
 }
+console.log(expandedForm(1010256), '101256');
+console.log(expandedForm(11256), '101256');
+console.log(expandedForm(12), '10 + 2');
+console.log(expandedForm(121), '100 + 20 + 1');
+console.log(expandedForm(1210), '1000 + 200 + 10');
+console.log(expandedForm(42), '40 + 2');
+console.log(expandedForm(70304), '70000 + 300 + 4');
 
 
 
-        
+/*
 
-        console.log(expandedForm(1010256), '101256');
-        console.log(expandedForm(11256), '101256');
-        console.log(expandedForm(12), '10 + 2');
-        console.log(expandedForm(121), '100 + 20 + 1');
-        console.log(expandedForm(1210), '1000 + 200 + 10');
-        console.log(expandedForm(42), '40 + 2');
-        console.log(expandedForm(70304), '70000 + 300 + 4');
+CDebug   function getSumOfDigits that takes positive integer to calculate sum of it's digits. Assume that argument is an integer.
+
+Example
+
+
+https://www.codewars.com/kata/563d59dd8e47a5ed220000ba/train/javascript
+
+123  => 6
+223  => 7
+1337 => 14
+
+function getSumOfDigits(integer) {
+  
+ return Array.from(String(integer), Number).reduce((a,b) => a + b)
+}
+
+
+
+function getSumOfDigits(integer) {
+  return (integer+'').split('').reduce((sum, d) => sum + (+d || 0), 0);
+}
+
+*/
+
+console.log('-----------------------------------------------');
+function getSumOfDigits(integer) {
+    let sum = 0;
+    let digits =  integer.toString();
+   
+    for(let i = 0; i < digits.length; i++) 
+    {
+        sum += parseInt(digits[i]); 
+    }
+    return sum;
+  }
+
+
+console.log(getSumOfDigits(123), 6, 'Incorrect answer for integer=123');
+console.log(getSumOfDigits(223), 7, 'Incorrect answer for integer=223');
+console.log(getSumOfDigits(0), 0, 'Incorrect answer for integer=0');
+
+
+console.log('-----------------------------------------------');
+
+
+/*
+In John's car the GPS records every s seconds the distance travelled from an origin (distances are measured in an arbitrary but consistent unit). For example, below is part of a record with s = 15:
+
+x = [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]
+The sections are:
+
+0.0-0.19, 0.19-0.5, 0.5-0.75, 0.75-1.0, 1.0-1.25, 1.25-1.50, 1.5-1.75, 1.75-2.0, 2.0-2.25
+We can calculate John's average hourly speed on every section and we get:
+
+[45.6, 74.4, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0]
+Given s and x the task is to return as an integer the *floor* of the maximum average speed per hour obtained on the sections of x. If x length is less than or equal to 1 return 0 since the car didn't move.
+
+Example:
+
+with the above data your function gps(s, x)should return 74
+
+Note
+
+With floats it can happen that results depends on the operations order. To calculate hourly speed you can use:
+
+ (3600 * delta_distance) / s.
+
+*/
+
+console.log('-----------------------------------------------');
+
+
+
+
+/*
+https://www.codewars.com/kata/56484848ba95170a8000004d/train/javascript
+
+
+The sections are:
+
+0.0-0.19, 0.19-0.5, 0.5-0.75, 0.75-1.0, 1.0-1.25, 1.25-1.50, 1.5-1.75, 1.75-2.0, 2.0-2.25
+We can calculate John's average hourly speed on every section and we get:
+
+[45.6, 74.4, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0]
+Given s and x the task is to return as an integer the *floor* of the maximum average speed per hour obtained on the sections of x. If x length is less than or equal to 1 return 0 since the car didn't move.
+
+Example:
+
+with the above data your function gps(s, x)should return 74
+
+Note
+
+With floats it can happen that results depends on the operations order. To calculate hourly speed you can use:
+
+ (3600 * delta_distance) / s.
+
+
+
+ var x = [0.0, 0.23, 0.46, 0.69, 0.92, 1.15, 1.38, 1.61];
+    var s = 20;
+    var u = 41;
+    testing(gps(s, x), u);
+    x = [0.0, 0.11, 0.22, 0.33, 0.44, 0.65, 1.08, 1.26, 1.68, 1.89, 2.1, 2.31, 2.52, 3.25];
+    s = 12;
+    u = 219;
+    testing(gps(s, x), u);
+    x = [0.0, 0.18, 0.36, 0.54, 0.72, 1.05, 1.26, 1.47, 1.92, 2.16, 2.4, 2.64, 2.88, 3.12, 3.36, 3.6, 3.84];
+    s = 20;
+    u = 80;
+    testing(gps(s, x), u)
+    x = [0.0, 0.01, 0.36, 0.6, 0.84, 1.05, 1.26, 1.47, 1.68, 1.89, 2.1, 2.31, 2.52, 2.73, 2.94, 3.15];
+    s = 14;
+    u = 90;
+    testing(gps(s, x), u);
+    x = [0.0, 0.02, 0.36, 0.54, 0.72, 0.9, 1.08, 1.26, 1.44, 1.62, 1.8];
+    s = 17;
+    u = 72;
+    testing(gps(s, x), u);
+    x = [0.0, 0.24, 0.48, 0.72, 0.96, 1.2, 1.44, 1.68, 1.92, 2.16, 2.4];
+    s = 12;
+    u = 72;
+    testing(gps(s, x), u);
+    x = [0.0, 0.02, 0.44, 0.66, 0.88, 1.1, 1.32, 1.54, 1.76];
+    s = 17;
+    u = 88;
+    testing(gps(s, x), u);
+    x = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.32, 1.54, 1.76, 1.98, 2.2, 2.42, 2.76, 2.99, 3.22, 3.45];
+    s = 16;
+    u = 76;
+    testing(gps(s, x), u)
+    x = [0.0, 0.01, 0.36, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 4.25, 4.5, 4.75];
+    s = 17;
+    u = 82;
+    testing(gps(s, x), u);
+    x = [0.0, 0.2, 0.4, 0.69, 0.92, 1.15, 1.38, 1.61, 1.92, 2.16, 2.4, 2.64, 2.88, 3.12, 3.36];
+    s = 19;
+    u = 58;
+    testing(gps(s, x), u);
+    x = [];
+    s = 19;
+    u = 0;
+    testing(gps(s, x), u);
+    x = [0.0];
+    s = 19;
+    u = 0;
+    testing(gps(s, x), u);
+
+
+*/
+
+function gps(s, x) {
+    // your code
+    let distTemp = [];
+    let speedMax = 0;
+    let count = 0; 
+    distTemp[0]=speedMax;
+    for (let i = 1 ; i < s.length ; i++){
+       
+            distTemp[i] = (s[i] - s[count])*3600/x;
+            count++;
+            if ( distTemp[i] > speedMax ){
+                speedMax = Math.round(distTemp[i-1]);
+            console.log(speedMax);
+            };
+            if ( distTemp[i] > speedMax ){
+                speedMax = Math.round(distTemp[i-1]);
+            console.log(speedMax);
+            };
+        }
+      
+   if (speedMax < 1) return 0;
+ return (speedMax);
+
+}
+console.log('-----------------------------------------------');        
+    
+
+//u = 58;
+let x = [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25];
+let s = 15;
+
+console.log(gps(x,s));
+//console.log(s[i]);
+
+
+console.log('-----------------------------------------------');        
+
+/*
+
+https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/javascript
+
+DESCRIPTION:
+
+There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+It’s guaranteed that array contains at least 3 numbers.
+
+The tests contain some very huge arrays, so think about performance.
+
+This is the first kata in series:
+
+Find the unique number (this kata)
+Find the unique string
+Find The Unique
+
+*/
+function findUniq(arr) {
+const numb = arr[0];
+
+    for (let i = 0 ; i < 1 ; i++){
+        for (y = 1 ; y < arr.length ; y ++ ){
+            if ( arr[i] != arr[y] ){
+                numb = arr[y];
+            } //else numb = arr[i]; 
+        }
+    }return numb;
+  }
+
+
+
+console.log(findUniq([ 1, 0, 0 ]), 1);
+console.log(findUniq([ 1, 0, 0 ]), 1);
+console.log(findUniq([ 0, 1, 0 ]), 1);
+console.log(findUniq([ 0, 0, 1 ]), 1);
+console.log(findUniq([ 1, 1, 1, 2, 1, 1 ]), 2);
+console.log(findUniq([ 1, 1, 2, 1, 1 ]), 2);
+console.log(findUniq([ 3, 10, 3, 3, 3 ]), 10);
+console.log(findUniq([ 1, 1, 1, 2, 1, 1 ]), 2);
+console.log(findUniq([ 0, 0, 0.55, 0, 0 ]), 0.55);
+console.log(findUniq([ 0, 0, 0.55, 0, 0 ]), 0.55);
+
+
+
