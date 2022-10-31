@@ -693,18 +693,16 @@ function expandedForm(num) {
         });
         
     let strN = strNum.toString();
-    let ats = strN.map(function(s){
-        return +s.split('').join('+');
-    });
-    // for (i = 0 ; i < strN.length ; i++){
-    //     if(strN[i] === ','){ 
-    //         strN[i] == "'+'";
-    //     }
-    // };
+    
+    for (i = 0 ; i < strN.length ; i++){
+        if(strN[i] === ','){ 
+            strN[i] == "'+'";
+        }
+    };
 
 
 
-    //const ats = strN.replaceAll(',',' + ');
+   // const ats = strN.replaceAll(',',' + ');
 
     console.log(strN);
     ats = strN.length;
