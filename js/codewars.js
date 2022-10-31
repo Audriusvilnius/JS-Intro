@@ -935,14 +935,14 @@ Find The Unique
 
 */
 function findUniq(arr) {
-const numb = arr[0];
-
-    for (let i = 0 ; i < 1 ; i++){
-        for (y = 1 ; y < arr.length ; y ++ ){
-            if ( arr[i] != arr[y] ){
-                numb = arr[y];
+let numb;
+let count = 0;
+    for (let i = 1 ; i < arr.length ; i++){
+        numb = arr[0];
+            if ( numb != arr[i] ){
+                numb = arr[i];
             } //else numb = arr[i]; 
-        }
+        
     }return numb;
   }
 
