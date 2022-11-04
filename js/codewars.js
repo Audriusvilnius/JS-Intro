@@ -1,3 +1,6 @@
+const { match } = require("minimatch");
+const { CHAR_NO_BREAK_SPACE } = require("picomatch/lib/constants");
+
 console.clear();
 
 
@@ -933,21 +936,39 @@ Find the unique number (this kata)
 Find the unique string
 Find The Unique
 
+function findUniq(arr) {
+  arr.sort((a,b)=>a-b);
+  return arr[0]==arr[1]?arr.pop():arr[0]
+}
+
+function findUniq(arr) {
+  let [a,b,c] = arr.slice(0,3);
+  if( a != b && a!=c ) return a;
+  for( let x of arr ) if( x!=a ) return x
+}
+
+function findUniq(arr) {
+  return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n));
+}
+
 */
 function findUniq(arr) {
 let numb;
 let count = 0;
-    for (let i = 1 ; i < arr.length ; i++){
-        numb = arr[0];
-            if ( numb != arr[i] ){
-                numb = arr[i];
-            } //else numb = arr[i]; 
-        
-    }return numb;
-  }
-
-
-
+numb = arr[0];
+    for (let i = 0 ; i < 1 ; i++){
+        for (y = 1 ; y < arr.length; y++){
+            if (arr[i] != arr[y] ){
+                count++;
+                if(count == 1){ 
+                    numb = arr[y];
+                }else numb = arr[i];
+            };
+        }
+            }
+        return numb;
+    }
+  
 console.log(findUniq([ 1, 0, 0 ]), 1);
 console.log(findUniq([ 1, 0, 0 ]), 1);
 console.log(findUniq([ 0, 1, 0 ]), 1);
@@ -960,4 +981,160 @@ console.log(findUniq([ 0, 0, 0.55, 0, 0 ]), 0.55);
 console.log(findUniq([ 0, 0, 0.55, 0, 0 ]), 0.55);
 
 
+console.log('-----------------------------------------------');  
 
+/*
+
+https://www.codewars.com/kata/559a28007caad2ac4e000083/train/javascript
+
+The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. It's easy to see that the sum of the perimeters of these squares is : 4 * (1 + 1 + 2 + 3 + 5 + 8) = 4 * 20 = 80 
+
+Could you give the sum of the perimeters of all the squares in a rectangle when there are n + 1 squares disposed in the same manner as in the drawing:
+
+
+*/
+
+function perimeter(n) {
+    
+    let fib = 1;
+    let sk = 3;
+    for ( i=0 ; i<n ; i++){
+        fib = sk+i;
+        fib +=fib;
+    }
+
+ return fib;
+}
+
+
+        console.log(perimeter(0), 4);
+        console.log(perimeter(5), 80);
+        console.log(perimeter(7), 216);
+        console.log(perimeter(20), 114624);
+        console.log(perimeter(30), 14098308);
+
+console.log('-----------------------------------------------');  
+
+/*
+
+https://www.codewars.com/kata/584fa5ae25dd087e6b000070/train/javascript
+
+Your task is very simple:
+Write a function hasOneChar returning:
+
+true if the given string contains the same character repeated all along the string
+false otherwise.
+For instance:
+
+hasOneChar('aaaaa'); //true
+hasOneChar('aaaab'); //false
+hasOneChar('bbbbb'); //true
+hasOneChar('bbabb'); //false
+Of course, what comes in mind first is a loop. But the purpose of this Kata is to test your creativity.
+You have to achieve it without using any loops.
+
+Corner cases: the function hasOneChar should return true if the string contains one single character.
+
+Be creative!
+
+
+function hasOneChar(s) {
+  return s === s[0].repeat(s.length)
+}
+
+function hasOneChar(s) {
+  s = s.split('').sort().join('');
+  return s[0] !== s[s.length - 1] ? false : true;
+}
+
+*/
+
+
+function hasOneChar(s) {
+
+    let count = 0;
+    const str = s.split('');
+    if (str.length == 1){
+        return true
+    }
+    s = str.sort();
+    if (s[0] != s[str.length-1]){
+        return false;
+    } else {return true;}
+}
+
+
+console.log(hasOneChar('a'), true);
+console.log(hasOneChar('aaaaa'), true);
+console.log(hasOneChar('aaaab'), false);
+console.log(hasOneChar('bbbbb'), true);
+console.log(hasOneChar('bbabb'), false);
+
+console.log('-----------------------------------------------');  
+
+/*
+
+
+
+Complete the function that returns an array of length n, starting with the given number x and the squares of the previous number. If n is negative or zero, return an empty array/list.
+
+Examples
+2, 5  -->  [2, 4, 16, 256, 65536]
+3, 3  -->  [3, 9, 81]
+
+
+
+function squares(x, n) {
+  var ret = [];
+  for(var i=0; i<n; i++){
+    ret.push(x);
+    x*= x;
+  }
+  return ret;
+}
+
+function squares(x, n) {
+  let arr = [];
+  if(n === 0 || n < 0) return arr;
+  for(let i = x; arr.length < n; i*=i) {
+      arr.push(i);
+  }
+  return arr
+}
+
+*/
+function squares(x, n) {
+    let number = [];
+    let num =[]; 
+    if (n <= 0){ 
+        return num;
+    }else 
+    num.push(x);
+    for (i = 1; i<n;i++){
+        number = Math.pow(num[i-1], 2);
+        num.push(number)
+    };
+    console.log(num);
+    return num;
+}
+        
+
+console.log(squares(2, 5), [2, 4, 16, 256, 65536]);
+console.log(squares(3, 3), [3, 9, 81]);
+console.log(squares(5, 3), [5, 25, 625]);
+console.log(squares(10, 4), [10, 100, 10000, 100000000]); 
+console.log(squares(2, 0), []);
+console.log(squares(2, -5), []);
+
+console.log('-----------------------------------------------'); 
+
+const reverseSeq = n => {
+   let arr = [];
+        for (i = 0 ; i < n ; i++){
+            num = n - i;
+            arr.push(num);
+        }
+return arr;
+}
+
+console.log(reverseSeq(5), [5, 4, 3, 2, 1]);
