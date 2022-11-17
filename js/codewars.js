@@ -1121,73 +1121,6 @@ console.log('-----------------------------------------------');
 /*
 
 
-https://www.codewars.com/kata/5842df8ccbd22792a4000245/train/javascript
-
-Write Number in Expanded Form
-
-// You will be given a number and you will need to return it as a string in Expanded Form. For example:
-
-// expandedForm(12); // Should return '10 + 2'
-// expandedForm(42); // Should return '40 + 2'
-// expandedForm(70304); // Should return '70000 + 300 + 4'
-// NOTE: All numbers will be whole numbers greater than 0.
-
-// If you liked this kata, check out part 2!!
-
-
-
-// */
-
-
-
-console.log('-----------------------------------------------');
-function expandedForm(num) {
-    // Your code here
-    let temp = 0;
-    const strTemp = [];
-    let count = 10;
-    let str = String(num);
-    if (str.length == 1) {
-        num = '' + num;
-        return num;
-    }
-    else {
-        for (let i = 1; i <= str.length; i++) {
-            if (num % 10 !== 0) {
-                temp = num - Math.floor(num / count) * 10;
-                num = num - temp;
-                strTemp.push(temp);
-            }
-            else {
-                count = count * 10;
-                temp = num - Math.floor(num / count) * count;
-                num = num - temp;
-                if (temp !== 0) {
-                    strTemp.push(temp);
-                }
-
-            }
-        }
-    }
-    strTemp.reverse();
-    for (i = 0; i<strTemp.length; i++){
-        let zwe = toString(strTemp[i]);console.log(zwe);
-    }
-
-    console.log(strTemp);
-    
-    
-}
-
-////parseInt(String(n).split('').sort().reverse().join(''))
-
-console.log(expandedForm(1010256), '101256');
-console.log(expandedForm(11256), '101256');
-console.log(expandedForm(12), '10 + 2');
-console.log(expandedForm(121), '100 + 20 + 1');
-console.log(expandedForm(1210), '1000 + 200 + 10');
-console.log(expandedForm(42), '40 + 2');
-console.log(expandedForm(70304), '70000 + 300 + 4');
 
 
 
@@ -1451,3 +1384,118 @@ function partsSums(ls) {
 //console.log(partsSums([0, 1, 3, 6, 10], [20, 20, 19, 16, 10, 0]));
 //console.log(partsSums([1, 2, 3, 4, 5, 6], [21, 20, 18, 15, 11, 6, 0]));
 console.log(partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358],[10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0]));
+
+
+// https://www.codewars.com/kata/529adbf7533b761c560004e5/train/javascript
+
+// Problem Context
+
+// The Fibonacci sequence is traditionally used to explain tree recursion.
+
+// function fibonacci(n) {
+//     if (n == 0 || n == 1)
+//         return n;
+//     return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+// This algorithm serves welll its educative purpose but it's tremendously inefficient, not only because of recursion, but because we invoke the fibonacci function twice, and the right branch of recursion (i.e. fibonacci(n-2)) recalculates all the Fibonacci numbers already calculated by the left branch (i.e. fibonacci(n-1)).
+
+// This algorithm is so inefficient that the time to calculate any Fibonacci number over 50 is simply too much.You may go for a cup of coffee or go take a nap while you wait for the answer.But if you try it here in Code Wars you will most likely get a code timeout before any answers.
+
+// For this particular Kata we want to implement the memoization solution.This will be cool because it will let us keep using the tree recursion algorithm while still keeping it sufficiently optimized to get an answer very rapidly.
+
+// The trick of the memoized version is that we will keep a cache data structure(most likely an associative array) where we will store the Fibonacci numbers as we calculate them.When a Fibonacci number is calculated, we first look it up in the cache, if it's not there, we calculate it and put it in the cache, otherwise we returned the cached number.
+
+// Refactor the function into a recursive Fibonacci function that using a memoized data structure avoids the deficiencies of tree recursion.Can you make it so the memoization cache is private to this function?
+
+
+function fibonacci(n) {
+    if (n < 3)
+        return n;
+    let a =2;
+    let b=1;
+    let ats = 0;
+    for (let i = 0;i<n-2;i++){
+        ats=a+b;
+        b=a;
+        a=ats;
+    }return ats;
+}
+
+
+
+
+
+console.log(fibonacci(5));
+
+
+https://www.codewars.com/kata/5842df8ccbd22792a4000245/train/javascript
+
+Write Number in Expanded Form
+
+// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+// expandedForm(12); // Should return '10 + 2'
+// expandedForm(42); // Should return '40 + 2'
+// expandedForm(70304); // Should return '70000 + 300 + 4'
+// NOTE: All numbers will be whole numbers greater than 0.
+
+// If you liked this kata, check out part 2!!
+
+
+
+// */
+
+
+
+console.log('-----------------------------------------------');
+function expandedForm(num) {
+
+    // Your code here
+    let temp = 0;
+    let ats =[];
+    const strTemp = [];
+    let count = 10;
+    let str = String(num);
+    if (str.length == 1) {
+        num = '' + num;
+        return num;
+    }
+    else {
+        for (let i = 1; i <= str.length; i++) {
+            if (num % 10 !== 0) {
+                temp = num - Math.floor(num / count) * 10;
+                num = num - temp;
+                strTemp.push(temp);
+            }
+            else {
+                count = count * 10;
+                temp = num - Math.floor(num / count) * count;
+                num = num - temp;
+                if (temp !== 0) {
+                    strTemp.push(temp);
+                }
+
+            }
+        }
+    }
+    strTemp.reverse();
+    for (i = 0; i < strTemp.length; i++) {
+        let zwe = [];
+
+        ats += strTemp[+i]  ;
+        
+    }
+
+return ats; 
+}
+
+////parseInt(String(n).split('').sort().reverse().join(''))str = str.replace('e', '');
+
+console.log(expandedForm(1010256), '101256');
+console.log(expandedForm(11256), '101256');
+console.log(expandedForm(12), '10 + 2');
+console.log(expandedForm(121), '100 + 20 + 1');
+console.log(expandedForm(1210), '1000 + 200 + 10');
+console.log(expandedForm(42), '40 + 2');
+console.log(expandedForm(70304), '70000 + 300 + 4');
+
