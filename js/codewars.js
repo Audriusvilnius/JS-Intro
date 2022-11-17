@@ -1,5 +1,4 @@
-const { match } = require("minimatch");
-const { CHAR_NO_BREAK_SPACE } = require("picomatch/lib/constants");
+
 
 console.clear();
 
@@ -1351,3 +1350,104 @@ return z;
 console.log(solution("abcdef"), ["ab", "cd", "ef"]);
 console.log(solution("abcdefg"), ["ab", "cd", "ef", "g_"]);
 console.log(solution(""), []);
+
+
+// // https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/javascript
+// // Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+// //     moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]) // returns[false,1,1,2,1,3,"a",0,0]
+
+// var moveZeros = function (arr) {
+//     return arr.filter(function (x) { return x !== 0 }).concat(arr.filter(function (x) { return x === 0; }));
+// }
+
+// var moveZeros = function (arr) {
+//     for (var i = arr.length - 1; i >= 0; i--) {
+//         if (arr[i] === 0) {
+//             arr.splice(i, 1);
+//             arr.push(0)
+//         }
+//     }
+//     return arr;
+// }
+
+function moveZeros(arr) {
+
+    let a=[];
+    let b=[];
+    for(i=0;i,i<arr.length;i++){  
+        if(arr[i] === 0){
+            a.push(arr[i]);
+            
+        } else {b.push(arr[i]);}
+    }
+    for(let i=0; i<a.length;i++){
+         b.push(a[i]);
+     }
+
+    //console.log(a);
+    
+    return b;
+}
+
+
+
+console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]), [1, 2, 1, 1, 3, 1, 0, 0, 0, 0]);
+console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]),[false,1,1,2,1,3,"a",0,0]);
+
+
+// https://www.codewars.com/kata/5ce399e0047a45001c853c2b/javascript
+
+// Let us consider this example(array written in general format):
+
+// ls = [0, 1, 3, 6, 10]
+
+// Its following parts:
+
+// ls = [0, 1, 3, 6, 10]
+// ls = [1, 3, 6, 10]
+// ls = [3, 6, 10]
+// ls = [6, 10]
+// ls = [10]
+// ls = []
+// The corresponding sums are(put together in a list): [20, 20, 19, 16, 10, 0]
+
+// The function parts_sums(or its variants in other languages) will take as parameter a list ls and return a list of the sums of its parts as defined above.
+
+// Other Examples:
+
+// ls = [1, 2, 3, 4, 5, 6]
+// parts_sums(ls) -> [21, 20, 18, 15, 11, 6, 0]
+
+// ls = [744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358]
+// parts_sums(ls) -> [10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0]
+// Notes
+
+// Take a look at performance: some lists have thousands of elements.
+// Please ask before translating.
+
+console.clear();
+
+function partsSums(ls) {
+
+    let a = [];
+    let sum = 0;
+    for (let y = 0; y < ls.length; ++y) {
+
+        for (let i = y; i < ls.length; ++i) {
+            sum += ls[i];
+        }
+        a.push(sum);
+        sum = 0;
+        //console.log(a);
+    } a.push(0);
+    return a;
+
+}
+
+
+
+//console.log([], [0]);
+//console.log(partsSums([0, 1, 3, 6, 10], [20, 20, 19, 16, 10, 0]));
+//console.log(partsSums([1, 2, 3, 4, 5, 6], [21, 20, 18, 15, 11, 6, 0]));
+console.log(partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358],[10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0]));
