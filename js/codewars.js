@@ -639,92 +639,6 @@ console.log(six(dividedBy(two())), 3);
 console.log('-----------------------------------------------');
 
 
-/*
-
-
-https://www.codewars.com/kata/5842df8ccbd22792a4000245/train/javascript
-
-Write Number in Expanded Form
-
-You will be given a number and you will need to return it as a string in Expanded Form. For example:
-
-expandedForm(12); // Should return '10 + 2'
-expandedForm(42); // Should return '40 + 2'
-expandedForm(70304); // Should return '70000 + 300 + 4'
-NOTE: All numbers will be whole numbers greater than 0.
-
-If you liked this kata, check out part 2!!
-
-
-
-*/
-
-
-console.clear();
-
-function expandedForm(num) {
-    // Your code here
-    let temp = 0;
-    const strTemp = [];
-    let count = 10;
-    let str = String(num);
-    if (str.length == 1) {
-        num = '' + num;
-        return num;
-    }
-    else {
-        for (let i = 1; i <= str.length; i++) {
-            if (num % 10 !== 0) {
-                temp = num - Math.floor(num / count) * 10;
-                num = num - temp;
-                strTemp.push(temp);
-            }
-            else {
-                count = count * 10;
-                temp = num - Math.floor(num / count) * count;
-                num = num - temp;
-                if (temp !== 0) {
-                    strTemp.push(temp);
-                }
-
-            }
-        }
-    }
-
-    // const strNum = strTemp.sort(function(a,b){
-    //             if(a<b){return 1}
-    //             if(a===b){return 0}
-    //             return -1;
-    //     });
-
-
-
-    for (i = 0; i < strTemp.length; i++) {
-        if (str[i] === ',') {
-            str[i] == "'+'";
-            let strNew = '' + strTemp[i].toString();
-        }
-    };
-
-
-
-    //const ats = strN.replaceAll(',',' + ');
-
-    console.log(strTemp);
-    //ats = strN.length;
-    //console.log(ats);
-
-    //return ats;
-
-}
-console.log(expandedForm(1010256), '101256');
-console.log(expandedForm(11256), '101256');
-console.log(expandedForm(12), '10 + 2');
-console.log(expandedForm(121), '100 + 20 + 1');
-console.log(expandedForm(1210), '1000 + 200 + 10');
-console.log(expandedForm(42), '40 + 2');
-console.log(expandedForm(70304), '70000 + 300 + 4');
-
 
 
 /*
@@ -1138,3 +1052,302 @@ return arr;
 }
 
 console.log(reverseSeq(5), [5, 4, 3, 2, 1]);
+
+console.log('-----------------------------------------------');
+
+
+/*
+
+https://www.codewars.com/kata/515decfd9dcfc23bb6000006/train/javascript
+
+Write an algorithm that will identify valid IPv4 addresses in dot-decimal format. IPs should be considered valid if they consist of four octets, with values between 0 and 255, inclusive.
+
+Valid inputs examples:
+Examples of valid inputs:
+1.2.3.4
+123.45.67.89
+Invalid input examples:
+1.2.3
+1.2.3.4.5
+123.456.78.90
+123.045.067.089
+Notes:
+Leading zeros (e.g. 01.02.03.04) are considered invalid
+Inputs are guaranteed to be a single string
+
+
+*/
+
+function isValidIP(str) {
+    let num = [];
+    let count = 0;
+    str = str.split('.');
+    for (i = 0 ; i < str.length ; i++){
+        num.push(parseInt(str[i]));
+        count++;
+        if (num[i] < 0 || num[i] > 255 || count > 4 || isNaN(num[i])){
+            return false;}  
+            //if(num[i]!=str[i]){return false;}
+     };
+     if(num.length<4){return false;}
+    
+    //if (ilg.length != num.length){return false;}
+    console.log(str);
+    console.log(num);
+
+    
+} 
+
+
+console.log(isValidIP("0.0.0.0"), true);
+console.log(isValidIP("12.255.56.1"), true);
+console.log(isValidIP("137.255.156.100"), true);
+console.log(isValidIP(''), false);
+console.log(isValidIP('abc.def.ghi.jkl'), false);
+console.log(isValidIP('123.456.789.0'), false);
+console.log(isValidIP('12.34.56'), false);
+console.log(isValidIP('01.02.03.04'), false);
+console.log(isValidIP('256.1.2.3'), false);
+console.log(isValidIP('1.2.3.4.5'), false);
+console.log(isValidIP('123,45,67,89'), false);
+console.log(isValidIP('1e0.1e1.1e2.2e2'), false);
+console.log(isValidIP(' 1.2.3.4'), false);
+console.log(isValidIP('1.2.3.4 '), false);
+console.log(isValidIP('12.34.56.-7'), false);
+console.log(isValidIP('1.2.3.4\n'), false);
+console.log(isValidIP('\n1.2.3.4'), false);
+
+console.log('-----------------------------------------------');
+
+/*
+
+
+https://www.codewars.com/kata/5842df8ccbd22792a4000245/train/javascript
+
+Write Number in Expanded Form
+
+// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+// expandedForm(12); // Should return '10 + 2'
+// expandedForm(42); // Should return '40 + 2'
+// expandedForm(70304); // Should return '70000 + 300 + 4'
+// NOTE: All numbers will be whole numbers greater than 0.
+
+// If you liked this kata, check out part 2!!
+
+
+
+// */
+
+
+
+console.log('-----------------------------------------------');
+function expandedForm(num) {
+    // Your code here
+    let temp = 0;
+    const strTemp = [];
+    let count = 10;
+    let str = String(num);
+    if (str.length == 1) {
+        num = '' + num;
+        return num;
+    }
+    else {
+        for (let i = 1; i <= str.length; i++) {
+            if (num % 10 !== 0) {
+                temp = num - Math.floor(num / count) * 10;
+                num = num - temp;
+                strTemp.push(temp);
+            }
+            else {
+                count = count * 10;
+                temp = num - Math.floor(num / count) * count;
+                num = num - temp;
+                if (temp !== 0) {
+                    strTemp.push(temp);
+                }
+
+            }
+        }
+    }
+    strTemp.reverse();
+    for (i = 0; i<strTemp.length; i++){
+        let zwe = toString(strTemp[i]);console.log(zwe);
+    }
+
+    console.log(strTemp);
+    
+    
+}
+
+////parseInt(String(n).split('').sort().reverse().join(''))
+
+console.log(expandedForm(1010256), '101256');
+console.log(expandedForm(11256), '101256');
+console.log(expandedForm(12), '10 + 2');
+console.log(expandedForm(121), '100 + 20 + 1');
+console.log(expandedForm(1210), '1000 + 200 + 10');
+console.log(expandedForm(42), '40 + 2');
+console.log(expandedForm(70304), '70000 + 300 + 4');
+
+
+
+
+function func1(input) {
+    console.log(input);
+   
+    //let array = input.split('',2);
+ 
+   
+    let count = 0;
+    let sakaicius;
+    let pas=[];
+    let passcount=0;
+    for (i = 0; i < input.length; i++){ 
+        for (y = 1; y < input.length ; y++){
+            if (input[i] == input[y] ){
+            count ++;
+                pas = input[i];
+            passcount = count;
+        }
+    }
+    }
+}
+
+const input='253361115396896236817310798838151927955726991103443906381162220816013898658801711715973210093048224651676123720733678173590094627154560525004427053826478374';
+
+console.log(func1(input));
+
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+// For example:
+
+// uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+// uniqueInOrder('ABBCcAD') == ['A', 'B', 'C', 'c', 'A', 'D']
+// uniqueInOrder([1, 2, 2, 3, 3]) == [1, 2, 3]
+
+// https://www.codewars.com/kata/54e6533c92449cc251001667/train/javascript
+
+
+// function uniqueInOrder(it) {
+//     var result = []
+//     var last
+
+//     for (var i = 0; i < it.length; i++) {
+//         if (it[i] !== last) {
+//             result.push(last = it[i])
+//         }
+//     }
+
+//     return result
+// }
+
+// var uniqueInOrder = function (iterable) {
+//     var res = [];
+//     for (var i = 0; i < iterable.length; i++) {
+//         if (iterable[i] != iterable[i + 1]) res.push(iterable[i]);
+//     }
+//     return res;
+// }
+
+
+var uniqueInOrder = function (iterable) {
+
+    let mas=[];
+    let ats=[]; 
+    if (!Array.isArray(iterable)){
+        mas = iterable.split('');
+        for (let i=0 ; i<mas.length;i++){
+            if(mas[i]!= mas[i+1]){
+                ats.push(mas[i]);
+            }
+        }
+    }else {
+        for (let i = 0; i < iterable.length; i++) {
+            if (iterable[i] != iterable[i + 1]) {
+                ats.push(iterable[i]);
+            }
+    }
+    
+}
+        
+    
+    return ats
+
+
+}
+
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'), ['A', 'B', 'C', 'D', 'A', 'B']);
+console.log(uniqueInOrder('ABBCcAD'), ['A', 'B', 'C', 'c', 'A', 'D']);
+console.log(uniqueInOrder([1, 2, 2, 3, 3]),[1, 2, 3]);
+
+
+// https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/train/javascript
+// Complete the solution so that it splits the string into pairs of two characters.If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore('_').
+
+//     Examples:
+
+// * 'abc' => ['ab', 'c_']
+//     * 'abcdef' => ['ab', 'cd', 'ef']
+//     * 
+//     * const { assert } = require('chai');
+
+// describe("Split Strings", () => {
+//     it("Basic tests", () => {
+//         assert.deepEqual(solution("abcdef"), ["ab", "cd", "ef"]);
+//         assert.deepEqual(solution("abcdefg"), ["ab", "cd", "ef", "g_"]);
+//         assert.deepEqual(solution(""), []);
+//     });
+// });
+// function solution(str) {
+//     var i = 0;
+//     var result = new Array();
+//     if (str.length % 2 !== 0) {
+//         str = str + '_';
+//     }
+//     while (i < str.length) {
+//         result.push(str[i] + str[i + 1]);
+//         i += 2;
+//     }
+//     return result;
+// }
+
+// function solution(str) {
+//     arr = [];
+//     for (var i = 0; i < str.length; i += 2) {
+//         second = str[i + 1] || '_';
+//         arr.push(str[i] + second);
+//     }
+//     return arr;
+// }
+
+
+function solution(str) {
+let a=[];
+let z = [];
+    if (str.length == 0 ){return a;}
+    if (str.length%2 == 0 ){
+        a= str.split('');
+        for (let i=0; i<str.length-1;i++){
+            z.push(str[i]+str[i+1]);
+            i++;
+            //console.log(z)
+        }
+    } else {str += "_";   
+        a = str.split('');
+        for (let i = 0; i < str.length - 1; i++) {
+            z.push(str[i] + str[i + 1]);
+            i++;
+            //console.log(z)
+        }}
+return z;
+}
+
+
+
+
+
+console.log(solution("abcdef"), ["ab", "cd", "ef"]);
+console.log(solution("abcdefg"), ["ab", "cd", "ef", "g_"]);
+console.log(solution(""), []);
